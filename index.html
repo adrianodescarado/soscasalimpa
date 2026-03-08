@@ -3,330 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOS Casa - Guia Prático</title>
+
+<title>S.O.S CASA</title>
 
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
+font-family:Arial;
 margin:0;
-background:#f4f4f4;
+background:#f7f7f7;
 color:#333;
 }
 
 .container{
-width:90%;
 max-width:1100px;
 margin:auto;
+padding:20px;
 }
 
 .hero{
-background:#fff;
-padding:60px 0;
+background:white;
+padding:60px 20px;
+text-align:center;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.hero h1{
+h1{
 font-size:40px;
-margin-bottom:20px;
+color:#222;
 }
 
-.hero p{
-font-size:18px;
-margin-bottom:25px;
+h2{
+color:#2c7a2c;
 }
 
-.botao{
-background:#ff8c00;
-color:#fff;
-padding:16px 28px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
+.cta{
 display:inline-block;
+background:#ff8c00;
+color:white;
+padding:18px 35px;
+font-size:20px;
+border-radius:8px;
+text-decoration:none;
+margin-top:20px;
+font-weight:bold;
 }
 
-.botao:hover{
-background:#e77700;
-}
-
-.hero img{
-width:100%;
-border-radius:10px;
+.cta:hover{
+background:#ff7200;
 }
 
 .section{
-padding:70px 0;
-background:#fafafa;
+background:white;
+margin-top:20px;
+padding:40px;
+border-radius:10px;
 }
 
-.section h2{
-text-align:center;
-font-size:32px;
-margin-bottom:40px;
-}
-
-.cards{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
-background:#fff;
-padding:25px;
-border-radius:8px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
-}
-
-.card h3{
-margin-top:0;
-}
-
-.beneficios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.beneficio{
-background:#fff;
+background:#f9f9f9;
 padding:20px;
-border-radius:6px;
-border:1px solid #eee;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
 }
 
-.mockup{
-text-align:center;
+.price{
+font-size:45px;
+color:#2c7a2c;
+font-weight:bold;
 }
 
-.mockup img{
-max-width:600px;
-width:100%;
-}
-
-.depoimentos{
-max-width:800px;
-margin:auto;
-}
-
-.depoimento{
-background:#fff;
+.testimonial{
+background:#eef6ee;
 padding:20px;
-margin-bottom:15px;
-border-radius:6px;
+border-radius:10px;
+margin:15px 0;
 }
 
 .faq{
-max-width:800px;
-margin:auto;
-}
-
-.faq-item{
-background:#fff;
-margin-bottom:10px;
-padding:15px;
-border-radius:6px;
-}
-
-.preco{
-background:#fff;
-text-align:center;
-padding:40px;
-border-radius:8px;
-max-width:400px;
-margin:auto;
-}
-
-.preco h3{
-font-size:36px;
-color:#2e7d32;
+margin-top:10px;
 }
 
 footer{
-background:#0d2a47;
-color:#fff;
 text-align:center;
-padding:40px 20px;
-margin-top:60px;
-}
-
-@media(max-width:800px){
-
-.hero-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
+padding:30px;
+font-size:14px;
+color:#666;
 }
 
 </style>
 
 </head>
+
 <body>
 
-<!-- HERO -->
+<div class="hero">
 
-<section class="hero">
-<div class="container hero-grid">
-
-<div>
-<h1>Resolva Problemas da Casa Sem Dor de Cabeça</h1>
+<h1>Cansada de se sentir sobrecarregada com os problemas da sua casa?</h1>
 
 <p>
-O guia prático que mostra soluções rápidas para problemas comuns
-da sua casa sem gastar fortunas com profissionais.
+Xixi no colchão, cheiro de mofo, gordura na cozinha…
+Pequenos problemas que roubam sua paz todos os dias.
 </p>
 
-<a class="botao" href="#">QUERO O GUIA AGORA</a>
+<h2>
+Existe um jeito simples de resolver 100 problemas domésticos
+usando coisas que você já tem em casa.
+</h2>
+
+<a class="cta" href="#">
+SIM, EU QUERO RESOLVER MINHA CASA AGORA
+</a>
+
 </div>
 
-<div>
-<img src="ebook.jpg">
-</div>
-
-</div>
-</section>
-
-<!-- BENEFÍCIOS -->
-
-<section class="section">
 <div class="container">
 
-<h2>O Que Você Vai Aprender</h2>
+<div class="section">
 
-<div class="beneficios">
+<h2>A história de Romilda</h2>
 
-<div class="beneficio">✔ Consertos simples</div>
-<div class="beneficio">✔ Economia em manutenção</div>
-<div class="beneficio">✔ Soluções rápidas</div>
-<div class="beneficio">✔ Evitar prejuízos</div>
-<div class="beneficio">✔ Organização da casa</div>
-<div class="beneficio">✔ Truques domésticos</div>
+<p>
+Romilda Santos, 52 anos, acordava antes do sol. Dois netos pequenos ainda dormiam na cama.
+Ela se aproximava e percebia… o colchão estava molhado novamente.
+</p>
+
+<p>
+Entre roupas espalhadas, brinquedos e pratos sujos,
+ela sabia que mais um dia de correria estava começando.
+</p>
+
+<p>
+Ela trabalhava com vendas da Avon e Natura
+e ainda precisava cuidar da casa.
+</p>
+
+<p>
+“Às vezes eu chorava sozinha sem saber como dar conta de tudo.”
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Alguns problemas resolvidos</h2>
+
+<div class="grid">
+
+<div class="card">Xixi no colchão resolvido em minutos</div>
+<div class="card">Cheiro de mofo eliminado</div>
+<div class="card">Ventilador limpo sem desmontar</div>
+<div class="card">Gordura pesada removida</div>
+<div class="card">Ralo desentupido sem encanador</div>
+<div class="card">Manchas de café removidas</div>
+<div class="card">Azulejo encardido limpo</div>
+<div class="card">Panela queimada restaurada</div>
+<div class="card">Cheiro ruim na lixeira eliminado</div>
+<div class="card">Ferrugem removida</div>
 
 </div>
 
 </div>
-</section>
 
-<!-- CONTEÚDO -->
+<div class="section">
 
-<section class="section">
-<div class="container">
+<h2>O que você recebe</h2>
 
-<h2>Conteúdo do Guia</h2>
-
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-<h3>Problemas Hidráulicos</h3>
-<p>Aprenda como resolver vazamentos e entupimentos simples.</p>
+<b>100 soluções domésticas</b>
+<p>Organizadas por categoria</p>
 </div>
 
 <div class="card">
-<h3>Consertos Elétricos</h3>
-<p>Soluções básicas e seguras para problemas elétricos.</p>
+<b>Checklist semanal</b>
+<p>Rotina simples de limpeza</p>
 </div>
 
 <div class="card">
-<h3>Manutenção Doméstica</h3>
-<p>Dicas práticas para manter sua casa sempre em ordem.</p>
+<b>Cronograma 15 minutos por dia</b>
+<p>Casa organizada sem esforço</p>
+</div>
+
+<div class="card">
+<b>Lista de misturas caseiras</b>
+<p>Receitas que realmente funcionam</p>
 </div>
 
 </div>
 
 </div>
-</section>
 
-<!-- MOCKUP -->
+<div class="section">
 
-<section class="section">
-<div class="container mockup">
+<h2>Transformação</h2>
 
-<h2>Veja Como Funciona</h2>
+<p>
+Depois de aplicar o S.O.S CASA você terá:
+</p>
 
-<img src="mockup.png">
-
-</div>
-</section>
-
-<!-- DEPOIMENTOS -->
-
-<section class="section">
-<div class="container depoimentos">
-
-<h2>Quem Comprou Recomenda</h2>
-
-<div class="depoimento">
-⭐⭐⭐⭐⭐  
-"Economizei muito dinheiro resolvendo problemas da casa sozinho."
-</div>
-
-<div class="depoimento">
-⭐⭐⭐⭐⭐  
-"Explicações simples e fáceis de aplicar."
-</div>
-
-<div class="depoimento">
-⭐⭐⭐⭐⭐  
-"Todo mundo deveria ter esse guia."
-</div>
+<ul>
+<li>Mais tranquilidade</li>
+<li>Mais tempo livre</li>
+<li>Casa organizada</li>
+<li>Economia de dinheiro</li>
+<li>Menos estresse</li>
+</ul>
 
 </div>
-</section>
 
-<!-- FAQ -->
-
-<section class="section">
-<div class="container faq">
+<div class="section">
 
 <h2>Perguntas Frequentes</h2>
 
-<div class="faq-item">
-<strong>Como recebo o guia?</strong><br>
-Você recebe imediatamente após a compra.
-</div>
+<div class="faq"><b>Preciso comprar produtos caros?</b><br>Não. Apenas coisas simples como vinagre e bicarbonato.</div>
 
-<div class="faq-item">
-<strong>Funciona no celular?</strong><br>
-Sim, você pode ler no celular, tablet ou computador.
-</div>
+<div class="faq"><b>Como recebo?</b><br>Acesso imediato após o pagamento.</div>
 
-<div class="faq-item">
-<strong>Tem garantia?</strong><br>
-Sim, garantia de 7 dias.
-</div>
+<div class="faq"><b>Funciona para qualquer casa?</b><br>Sim, qualquer tipo de casa ou apartamento.</div>
 
-</div>
-</section>
-
-<!-- PREÇO -->
-
-<section class="section">
-<div class="container">
-
-<div class="preco">
-
-<h3>R$10</h3>
-
-<p>Acesso imediato ao guia completo.</p>
-
-<a class="botao" href="#">COMPRAR AGORA</a>
+<div class="faq"><b>Tem garantia?</b><br>Sim, 7 dias de garantia total.</div>
 
 </div>
 
+<div class="section" style="text-align:center">
+
+<h2>Quanto custa resolver os problemas da sua casa?</h2>
+
+<div class="price">R$27</div>
+
+<p>Acesso imediato após pagamento</p>
+
+<a class="cta" href="#">
+SIM, EU QUERO MINHA CASA ORGANIZADA
+</a>
+
+<p style="margin-top:20px;">
+Pagamento seguro via Hotmart
+</p>
+
 </div>
-</section>
+
+<div class="section">
+
+<h2>Comentários</h2>
+
+<div class="testimonial">
+<b>Mariana Souza</b><br>
+Estou acompanhando os comentários e parece interessante.
+</div>
+
+<div class="testimonial">
+<b>Juliana Costa</b><br>
+Tem acesso imediato depois da compra?
+</div>
+
+<div class="testimonial">
+<b>Camila Rocha</b><br>
+O que mais gostei é que parece ser organizado por categorias.
+</div>
+
+</div>
+
+</div>
 
 <footer>
 
-<p>© 2026 - Todos os direitos reservados</p>
+S.O.S CASA — Todos os direitos reservados
 
 </footer>
 
