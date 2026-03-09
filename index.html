@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,170 +19,209 @@
 
 body{
 font-family:'Inter',sans-serif;
-background-color:var(--bg-cream);
+background:var(--bg-cream);
 }
 
+/* CTA */
+
 .btn-cta{
-background-color:var(--accent-yellow);
-color:#000;
+background:var(--accent-yellow);
+color:black;
 font-weight:bold;
-border-radius:8px;
-transition:0.3s;
+border-radius:10px;
+padding:18px 32px;
+transition:.3s;
 }
 
 .btn-cta:hover{
 transform:scale(1.05);
-background-color:#e0a300;
+background:#e0a300;
 }
 
-.section{
-max-width:900px;
-margin:auto;
-padding:60px 20px;
+/* animação */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* barra fixa */
+
+.fixed-cta{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#111;
+padding:15px;
+display:flex;
+justify-content:center;
+z-index:999;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <!-- HERO -->
 
-<section class="bg-stone-900 text-white py-20 px-6">
+<section class="bg-stone-900 text-white py-24 px-6 text-center">
 
-<div class="max-w-4xl mx-auto text-center">
-
-<h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+<h1 class="text-4xl md:text-6xl font-extrabold mb-6 fade">
 
 Cansada de se sentir sobrecarregada com os problemas da sua casa?
 
 </h1>
 
-<p class="text-xl text-gray-300 mb-6">
+<p class="text-xl text-gray-300 mb-10 fade">
 
-Xixi no colchão, cheiro de mofo, sujeira que parece impossível… pequenos problemas que roubam sua paz todos os dias.
-
-</p>
-
-<p class="text-lg text-gray-400 mb-10">
-
-Existe um jeito simples de resolver <b>100 problemas domésticos em minutos</b>, usando apenas coisas que você já tem em casa.
+Existe um jeito simples de resolver 100 problemas domésticos usando apenas coisas que você já tem em casa.
 
 </p>
 
-<a href="#comprar" class="btn-cta px-10 py-4 text-xl inline-block">
+<a href="#comprar" class="btn-cta text-xl fade">
 
 SIM, EU QUERO RESOLVER MINHA CASA AGORA
 
 </a>
 
+<p class="mt-8 text-gray-400 text-sm">
+
+🔥 <span id="contador">127</span> pessoas acessaram essa página hoje
+
+</p>
+
+</section>
+
+
+<!-- PROBLEMAS -->
+
+<section class="max-w-5xl mx-auto py-20 px-6 fade">
+
+<h2 class="text-3xl font-bold mb-10 text-center">
+
+Pequenos problemas que roubam sua paz todos os dias
+
+</h2>
+
+<ul class="space-y-6 text-lg">
+
+<li>❌ Xixi no colchão que deixa cheiro</li>
+<li>❌ Ventilador cheio de poeira</li>
+<li>❌ Banheiro engordurado</li>
+<li>❌ Cozinha cheia de gordura</li>
+<li>❌ Cheiro de mofo pela casa</li>
+
+</ul>
+
+</section>
+
+
+<!-- SOLUÇÃO -->
+
+<section class="bg-white py-20 px-6 fade">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<h2 class="text-4xl font-bold mb-8">
+
+Apresentando o método SOS CASA
+
+</h2>
+
+<p class="text-lg text-gray-600 mb-6">
+
+100 soluções domésticas simples, rápidas e diretas ao ponto.
+
+</p>
+
+<p class="text-lg text-gray-600">
+
+Você apenas segue o passo a passo e resolve o problema em minutos.
+
+</p>
+
 </div>
 
 </section>
 
-<!-- HISTÓRIA -->
-
-<section class="section text-gray-800">
-
-<h2 class="text-3xl font-bold mb-6">A história de Romilda</h2>
-
-<p class="mb-4">
-Romilda Santos, 52 anos, acorda antes do sol. Dois netos pequenos ainda dormem na cama. Ela se aproxima e percebe… o colchão está molhado mais uma vez.
-</p>
-
-<p class="mb-4">
-Ela suspira. Entre roupas espalhadas, brinquedos e pratos sujos, ela sabe que vai começar outro dia de corrida.
-</p>
-
-<p class="mb-4">
-O trabalho com vendas da Avon e Natura não espera. Clientes, entregas, pedidos… e a casa exigindo atenção.
-</p>
-
-<p class="mb-4">
-Romilda nunca foi familiarizada com a internet. Pesquisar soluções online? Um tormento.
-</p>
-
-<p class="mb-4 font-semibold">
-“Às vezes eu chorava sozinha, sem saber como dar conta de tudo.”
-</p>
-
-</section>
-
-<!-- PROBLEMAS -->
-
-<section class="section text-gray-800">
-
-<h2 class="text-3xl font-bold mb-6">Cada pequeno problema parecia uma crise</h2>
-
-<ul class="space-y-4">
-
-<li>• O xixi no colchão que deixava cheiro mesmo depois de lavar</li>
-
-<li>• O ventilador cheio de poeira que ninguém sabia limpar direito</li>
-
-<li>• O banheiro engordurado depois do café da manhã</li>
-
-<li>• A cozinha acumulando gordura difícil de remover</li>
-
-</ul>
-
-<p class="mt-6">
-Romilda se sentia exausta, sem tempo, sem orientação.
-</p>
-
-<p class="font-semibold mt-4">
-“Eu não tinha tempo para estudar, nem paciência para ficar tentando métodos que não davam certo.”
-</p>
-
-</section>
-
-<!-- SOLUÇÃO -->
-
-<section class="section">
-
-<h2 class="text-3xl font-bold mb-6">Foi então que ela descobriu o SOS CASA</h2>
-
-<p class="mb-4">
-Um método simples, direto ao ponto, com soluções rápidas para problemas do dia a dia.
-</p>
-
-<p class="mb-4">
-Sem termos complicados. Sem perder horas pesquisando.
-</p>
-
-<p class="font-semibold">
-“Pela primeira vez senti que alguém pensou em mim.”
-</p>
-
-</section>
 
 <!-- BENEFÍCIOS -->
 
 <section class="py-20 px-6">
 
-<div class="max-w-6xl mx-auto text-center">
+<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
 
-<h2 class="text-3xl font-bold mb-12 text-gray-800">
+<div class="bg-white p-8 rounded-xl shadow fade">
 
-Depois de aplicar o SOS CASA você vai sentir:
+<h3 class="text-xl font-bold mb-3">✔ Economia</h3>
+
+<p>Use produtos que você já tem em casa.</p>
+
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow fade">
+
+<h3 class="text-xl font-bold mb-3">✔ Rapidez</h3>
+
+<p>Resolva problemas domésticos em minutos.</p>
+
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow fade">
+
+<h3 class="text-xl font-bold mb-3">✔ Praticidade</h3>
+
+<p>Sem termos complicados ou métodos difíceis.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROVA SOCIAL -->
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<h2 class="text-3xl font-bold mb-10">
+
+Veja o que estão dizendo
 
 </h2>
 
-<div class="grid md:grid-cols-3 gap-6">
+<div class="space-y-6 text-left">
 
-<div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-700">
-<h3 class="font-bold text-xl mb-2">✔ Tranquilidade</h3>
-<p class="text-gray-600">Controle total da sua casa.</p>
+<div class="bg-gray-100 p-6 rounded-lg">
+
+<p>"Resolvi um problema antigo de gordura no fogão em minutos."</p>
+<strong>— Renata Silva</strong>
+
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-700">
-<h3 class="font-bold text-xl mb-2">✔ Economia</h3>
-<p class="text-gray-600">Menos gastos com produtos caros.</p>
+<div class="bg-gray-100 p-6 rounded-lg">
+
+<p>"Muito mais fácil do que ficar pesquisando no YouTube."</p>
+<strong>— Carla Mendes</strong>
+
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-700">
-<h3 class="font-bold text-xl mb-2">✔ Mais tempo</h3>
-<p class="text-gray-600">Para você e sua família.</p>
+<div class="bg-gray-100 p-6 rounded-lg">
+
+<p>"Simples, direto e funciona de verdade."</p>
+<strong>— Aline Batista</strong>
+
 </div>
 
 </div>
@@ -190,140 +230,101 @@ Depois de aplicar o SOS CASA você vai sentir:
 
 </section>
 
+
 <!-- OFERTA -->
 
-<section id="comprar" class="py-16 bg-white border-t border-gray-200">
+<section id="comprar" class="py-20 px-6 text-center">
 
-<div class="max-w-4xl mx-auto text-center px-6">
+<div class="max-w-3xl mx-auto bg-green-700 text-white p-12 rounded-2xl shadow-2xl">
 
-<div class="bg-green-700 text-white rounded-2xl p-8 md:p-12 shadow-2xl">
+<h2 class="text-4xl font-black mb-6">
 
-<p class="uppercase tracking-widest font-semibold mb-2">
-
-Oferta Especial
-
-</p>
-
-<h2 class="text-5xl font-black mb-6">
-
-R$10,00
+Hoje apenas R$10
 
 </h2>
 
-<p class="text-xl mb-8 opacity-90">
+<p class="text-xl mb-8">
 
-Acesso imediato após o pagamento.
+Acesso imediato após pagamento.
 
 </p>
 
-<ul class="text-left inline-block mb-10 space-y-3">
+<ul class="text-left inline-block mb-10 space-y-2">
 
-<li>✅ 100 soluções domésticas</li>
-
-<li>✅ Técnicas contra odores e manchas</li>
-
-<li>✅ Checklist semanal</li>
-
-<li>✅ Cronograma de 15 minutos por dia</li>
-
-<li>✅ 7 dias de garantia</li>
+<li>✔ 100 soluções domésticas</li>
+<li>✔ Técnicas contra manchas</li>
+<li>✔ Checklist semanal</li>
+<li>✔ Cronograma de 15 minutos</li>
+<li>✔ Garantia de 7 dias</li>
 
 </ul>
 
 <br>
 
-<a href="#" class="btn-cta px-12 py-5 text-2xl w-full md:w-auto inline-block">
+<a href="#" class="btn-cta text-2xl">
 
-SIM, EU QUERO RESOLVER MINHA CASA AGORA
+COMPRAR AGORA
 
 </a>
 
 </div>
 
-</div>
-
 </section>
 
-<!-- COMENTÁRIOS -->
-
-<section class="section">
-
-<h2 class="text-2xl font-bold mb-6">Comentários</h2>
-
-<div id="comments-container"></div>
-
-<button id="loadMoreBtn" style="margin-top:15px;background:none;border:none;color:#1877f2;cursor:pointer;font-weight:bold;">
-Ver mais comentários
-</button>
-
-</section>
 
 <!-- FOOTER -->
 
-<footer class="bg-stone-900 text-gray-500 py-10 text-center">
+<footer class="bg-stone-900 text-gray-400 py-10 text-center">
 
-<p>© 2026 SOS Casa - Todos os direitos reservados.</p>
+<p>© 2026 SOS Casa</p>
 
 </footer>
 
+
+<!-- BARRA FIXA -->
+
+<div class="fixed-cta">
+
+<a href="#comprar" class="btn-cta text-lg">
+
+🔥 GARANTIR ACESSO POR R$10
+
+</a>
+
+</div>
+
+
 <script>
 
-const commentsData=[
+/* animação ao rolar */
 
-{name:"Mariana Souza",avatar:"https://randomuser.me/api/portraits/women/55.jpg",text:"Estou acompanhando os comentários e parece interessante.",time:"12 min",likes:18,replies:[]},
+const fades=document.querySelectorAll('.fade')
 
-{name:"Renata Silva",avatar:"https://randomuser.me/api/portraits/women/65.jpg",text:"Já comprei e estou usando. Realmente é simples.",time:"45 min",likes:52,replies:[]},
+window.addEventListener('scroll',()=>{
 
-{name:"Aline Batista",avatar:"https://randomuser.me/api/portraits/women/36.jpg",text:"Resolvi um problema antigo no fogão com uma das técnicas.",time:"50 min",likes:44,replies:[]},
+fades.forEach(el=>{
 
-{name:"Carla Nunes",avatar:"https://randomuser.me/api/portraits/women/18.jpg",text:"Não tenho muito tempo pra pesquisar soluções.",time:"55 min",likes:19,replies:[]},
+const pos=el.getBoundingClientRect().top
 
-{name:"Camila Rocha",avatar:"https://randomuser.me/api/portraits/women/61.jpg",text:"O que mais gostei é que parece bem organizado.",time:"30 min",likes:29,replies:[]}
+if(pos<window.innerHeight-100){
 
-]
-
-let visibleComments=3
-
-function renderComments(){
-
-const container=document.getElementById("comments-container")
-container.innerHTML=""
-
-commentsData.slice(0,visibleComments).forEach(comment=>{
-
-container.innerHTML+=`
-
-<div style="margin-bottom:15px;">
-<img src="${comment.avatar}" width="35" style="border-radius:50%;vertical-align:top;">
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
-<strong>${comment.name}</strong>
-<div>${comment.text}</div>
-</div>
-<div style="font-size:12px;color:#65676b;margin-left:45px;">
-Curtir · ${comment.time} · ❤️ ${comment.likes}
-</div>
-</div>
-
-`
-
-})
-
-if(visibleComments>=commentsData.length){
-
-document.getElementById("loadMoreBtn").style.display="none"
+el.classList.add('show')
 
 }
 
-}
-
-document.getElementById("loadMoreBtn").addEventListener("click",function(){
-
-visibleComments+=3
-renderComments()
+})
 
 })
 
-renderComments()
+/* contador dinâmico */
+
+setInterval(()=>{
+
+let num=document.getElementById("contador")
+
+num.innerText=parseInt(num.innerText)+Math.floor(Math.random()*2)
+
+},4000)
 
 </script>
 
