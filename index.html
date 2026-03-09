@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,64 +6,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SOS CASA</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
+<title>S.O.S CASA</title>
 
 <style>
 
-:root{
---primary-green:#2d5a27;
---accent-yellow:#f4b400;
---bg-cream:#f9f7f2;
-}
-
 body{
-font-family:'Inter',sans-serif;
-background:var(--bg-cream);
+font-family: Arial, sans-serif;
+margin:0;
+background:#f7f4ee;
+color:#333;
+line-height:1.7;
 }
 
-/* CTA */
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
 
-.btn-cta{
-background:var(--accent-yellow);
-color:black;
+section{
+padding:60px 0;
+border-bottom:1px solid #e2e2e2;
+}
+
+h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+h2{
+font-size:30px;
+margin-bottom:20px;
+}
+
+h3{
+font-size:22px;
+margin-top:30px;
+}
+
+.cta{
+display:inline-block;
+background:#f5a623;
+color:#000;
+padding:18px 28px;
 font-weight:bold;
-border-radius:10px;
-padding:18px 32px;
-transition:.3s;
+border-radius:6px;
+text-decoration:none;
+margin-top:20px;
 }
 
-.btn-cta:hover{
-transform:scale(1.05);
-background:#e0a300;
+.price{
+font-size:50px;
+font-weight:bold;
+color:#2a7b35;
 }
 
-/* animação */
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* barra fixa */
-
-.fixed-cta{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#111;
+.comment{
+background:#f1f1f1;
 padding:15px;
-display:flex;
-justify-content:center;
-z-index:999;
+margin:15px 0;
+border-radius:6px;
 }
 
 </style>
@@ -71,262 +74,299 @@ z-index:999;
 
 <body>
 
-<!-- HERO -->
 
-<section class="bg-stone-900 text-white py-24 px-6 text-center">
+<section>
+<div class="container">
 
-<h1 class="text-4xl md:text-6xl font-extrabold mb-6 fade">
+<h1>Cansada de se sentir sobrecarregada com os problemas da sua casa?</h1>
 
-Cansada de se sentir sobrecarregada com os problemas da sua casa?
+<p>Xixi no colchão, cheiro de mofo, sujeira que parece impossível... Pequenos problemas que roubam sua paz todos os dias.</p>
 
-</h1>
+<p>Existe um jeito simples de resolver 100 problemas domésticos em minutos, usando apenas coisas que você já tem em casa.</p>
 
-<p class="text-xl text-gray-300 mb-10 fade">
+<a class="cta">SIM, EU QUERO RESOLVER MINHA CASA AGORA!</a>
 
-Existe um jeito simples de resolver 100 problemas domésticos usando apenas coisas que você já tem em casa.
-
-</p>
-
-<a href="#comprar" class="btn-cta text-xl fade">
-
-SIM, EU QUERO RESOLVER MINHA CASA AGORA
-
-</a>
-
-<p class="mt-8 text-gray-400 text-sm">
-
-🔥 <span id="contador">127</span> pessoas acessaram essa página hoje
-
-</p>
-
+</div>
 </section>
 
 
-<!-- PROBLEMAS -->
+<section>
+<div class="container">
 
-<section class="max-w-5xl mx-auto py-20 px-6 fade">
+<h2>A história de Romilda</h2>
 
-<h2 class="text-3xl font-bold mb-10 text-center">
+<h3>Acordando para o caos</h3>
 
-Pequenos problemas que roubam sua paz todos os dias
+<p>Romilda Santos, 52 anos, acorda antes do sol. Dois netos pequenos ainda dormem na cama. Ela se aproxima e percebe... o colchão está molhado mais uma vez.</p>
 
-</h2>
+<p>Ela suspira. Entre roupas espalhadas, brinquedos e pratos sujos, ela sabe que vai começar outro dia de corrida.</p>
 
-<ul class="space-y-6 text-lg">
+<p>O trabalho com vendas da Avon e Natura não espera. Clientes, entregas, pedidos... e a casa exigindo atenção.</p>
 
-<li>❌ Xixi no colchão que deixa cheiro</li>
-<li>❌ Ventilador cheio de poeira</li>
-<li>❌ Banheiro engordurado</li>
-<li>❌ Cozinha cheia de gordura</li>
-<li>❌ Cheiro de mofo pela casa</li>
+<p><strong>"Às vezes eu chorava sozinha, sem saber como dar conta de tudo."</strong></p>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>Cada pequeno problema parecia uma crise</h2>
+
+<ul>
+
+<li>O xixi no colchão que deixava cheiro mesmo depois de lavar</li>
+<li>O ventilador cheio de poeira que ninguém sabia limpar direito</li>
+<li>O banheiro engordurado depois do café da manhã dos netos</li>
+<li>A cozinha acumulando gordura difícil de remover</li>
 
 </ul>
 
+<p>Romilda se sentia exausta, sem tempo, sem orientação.</p>
+
+<p>Não adiantava pesquisar, nem tentar métodos complicados. Ela precisava de algo simples e direto.</p>
+
+<p><strong>"Eu não tinha tempo para estudar, nem paciência para ficar tentando métodos que não davam certo."</strong></p>
+
+</div>
 </section>
 
 
-<!-- SOLUÇÃO -->
+<section>
+<div class="container">
 
-<section class="bg-white py-20 px-6 fade">
+<h2>A virada</h2>
 
-<div class="max-w-4xl mx-auto text-center">
+<h3>Descobrindo a solução</h3>
 
-<h2 class="text-4xl font-bold mb-8">
+<p>Um dia, quase sem esperança, Romilda encontrou o método S.O.S CASA.</p>
 
-Apresentando o método SOS CASA
+<p>Ela pensou:</p>
 
-</h2>
+<p>"Será que vai ser fácil de entender? Será que vou conseguir aplicar sem perder tempo?"</p>
 
-<p class="text-lg text-gray-600 mb-6">
+<p>E foi exatamente isso que aconteceu.</p>
 
-100 soluções domésticas simples, rápidas e diretas ao ponto.
+<p>O método era pronto, direto ao ponto, com passo a passo simples, sem complicações ou termos difíceis.</p>
 
-</p>
-
-<p class="text-lg text-gray-600">
-
-Você apenas segue o passo a passo e resolve o problema em minutos.
-
-</p>
+<p><strong>"Pela primeira vez senti que alguém pensou em mim."</strong></p>
 
 </div>
-
 </section>
 
 
-<!-- BENEFÍCIOS -->
+<section>
+<div class="container">
 
-<section class="py-20 px-6">
+<h2>Aplicando o método</h2>
 
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+<h3>Veja alguns dos problemas resolvidos</h3>
 
-<div class="bg-white p-8 rounded-xl shadow fade">
+<ul>
 
-<h3 class="text-xl font-bold mb-3">✔ Economia</h3>
-
-<p>Use produtos que você já tem em casa.</p>
-
-</div>
-
-<div class="bg-white p-8 rounded-xl shadow fade">
-
-<h3 class="text-xl font-bold mb-3">✔ Rapidez</h3>
-
-<p>Resolva problemas domésticos em minutos.</p>
-
-</div>
-
-<div class="bg-white p-8 rounded-xl shadow fade">
-
-<h3 class="text-xl font-bold mb-3">✔ Praticidade</h3>
-
-<p>Sem termos complicados ou métodos difíceis.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROVA SOCIAL -->
-
-<section class="bg-white py-20 px-6">
-
-<div class="max-w-4xl mx-auto text-center">
-
-<h2 class="text-3xl font-bold mb-10">
-
-Veja o que estão dizendo
-
-</h2>
-
-<div class="space-y-6 text-left">
-
-<div class="bg-gray-100 p-6 rounded-lg">
-
-<p>"Resolvi um problema antigo de gordura no fogão em minutos."</p>
-<strong>— Renata Silva</strong>
-
-</div>
-
-<div class="bg-gray-100 p-6 rounded-lg">
-
-<p>"Muito mais fácil do que ficar pesquisando no YouTube."</p>
-<strong>— Carla Mendes</strong>
-
-</div>
-
-<div class="bg-gray-100 p-6 rounded-lg">
-
-<p>"Simples, direto e funciona de verdade."</p>
-<strong>— Aline Batista</strong>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- OFERTA -->
-
-<section id="comprar" class="py-20 px-6 text-center">
-
-<div class="max-w-3xl mx-auto bg-green-700 text-white p-12 rounded-2xl shadow-2xl">
-
-<h2 class="text-4xl font-black mb-6">
-
-Hoje apenas R$10
-
-</h2>
-
-<p class="text-xl mb-8">
-
-Acesso imediato após pagamento.
-
-</p>
-
-<ul class="text-left inline-block mb-10 space-y-2">
-
-<li>✔ 100 soluções domésticas</li>
-<li>✔ Técnicas contra manchas</li>
-<li>✔ Checklist semanal</li>
-<li>✔ Cronograma de 15 minutos</li>
-<li>✔ Garantia de 7 dias</li>
+<li>Xixi no colchão resolvido em minutos</li>
+<li>Cheiro de mofo eliminado</li>
+<li>Ventilador limpo sem desmontar</li>
+<li>Gordura pesada na cozinha removida</li>
+<li>Ralo entupido desentupido sem encanador</li>
+<li>Mancha de café removida</li>
+<li>Azulejo encardido limpo</li>
+<li>Panela queimada restaurada</li>
+<li>Cheiro ruim na lixeira eliminado</li>
+<li>Ferrugem removida</li>
+<li>Vidro manchado brilhando</li>
+<li>Piso encardido limpo</li>
+<li>Roupa amarelada branqueada</li>
+<li>Cortina mofada limpa</li>
+<li>Sofá com mancha restaurado</li>
+<li>Cheiro de cigarro eliminado</li>
+<li>Geladeira com mau cheiro resolvido</li>
+<li>Rejunte escuro clareado</li>
+<li>Tapete com odor forte eliminado</li>
+<li>Pia de inox brilhando</li>
+<li>Box do banheiro transparente</li>
+<li>Micro-ondas limpo sem esforço</li>
+<li>Vaso sanitário limpo</li>
+<li>Guarda-roupa sem cheiro de mofo</li>
+<li>Tênis branco encardido limpo</li>
+<li>Lençol com manchas restaurado</li>
+<li>Torneira brilhando novamente</li>
 
 </ul>
 
-<br>
-
-<a href="#" class="btn-cta text-2xl">
-
-COMPRAR AGORA
-
-</a>
+<p>Cada solução é passo a passo, direto ao ponto.</p>
 
 </div>
-
 </section>
 
 
-<!-- FOOTER -->
+<section>
+<div class="container">
 
-<footer class="bg-stone-900 text-gray-400 py-10 text-center">
+<h2>Transformação completa</h2>
 
-<p>© 2026 SOS Casa</p>
+<p>Hoje Romilda acorda tranquila.</p>
 
+<p>Os netos ainda fazem bagunça, mas ela sabe exatamente como agir.</p>
+
+<p><strong>"O S.O.S CASA mudou minha rotina."</strong></p>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>Depois de aplicar o método</h2>
+
+<ul>
+
+<li>Tranquilidade e controle sobre sua casa</li>
+<li>Economia de tempo e dinheiro</li>
+<li>Rotina organizada</li>
+<li>Mais energia e menos frustração</li>
+<li>Mais tempo para a família</li>
+
+</ul>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>S.O.S CASA no celular e computador</h2>
+
+<p>Imagine chegar em casa e não sentir medo do que vai encontrar.</p>
+
+<p>Você aplica o passo a passo e resolve tudo em minutos.</p>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>O que você recebe</h2>
+
+<ul>
+
+<li>100 soluções domésticas</li>
+<li>Métodos para eliminar odores</li>
+<li>Soluções para manchas difíceis</li>
+<li>Limpeza rápida</li>
+<li>Checklist semanal</li>
+<li>Cronograma de 15 minutos por dia</li>
+
+</ul>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>Perguntas Frequentes</h2>
+
+<p><strong>O que é o S.O.S CASA?</strong></p>
+<p>Um método simples com soluções domésticas práticas.</p>
+
+<p><strong>Preciso saber usar internet?</strong></p>
+<p>Não. O acesso é simples.</p>
+
+<p><strong>Funciona para qualquer casa?</strong></p>
+<p>Sim, qualquer ambiente doméstico.</p>
+
+<p><strong>Tem garantia?</strong></p>
+<p>Sim, 7 dias.</p>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>Quanto custa resolver todos os problemas da sua casa?</h2>
+
+<div class="price">R$ 10,00</div>
+
+<p>Acesso imediato após pagamento.</p>
+
+<ul>
+
+<li>Checklist semanal</li>
+<li>Lista de misturas caseiras</li>
+<li>Cronograma de limpeza</li>
+
+</ul>
+
+<a class="cta">SIM, EU QUERO RESOLVER MINHA CASA AGORA!</a>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>Comentários</h2>
+
+<div class="comment">
+<strong>Mariana Souza</strong><br>
+Estou acompanhando os comentários e parece interessante. Alguém sabe dizer se é fácil aplicar?
+</div>
+
+<div class="comment">
+<strong>S.O.S Casa Oficial</strong><br>
+Sim! As orientações são simples e pensadas para facilitar a rotina.
+</div>
+
+<div class="comment">
+<strong>Roberta Lima</strong><br>
+Sempre tive dificuldade com manchas no sofá.
+</div>
+
+<div class="comment">
+<strong>Juliana Costa</strong><br>
+Tem acesso imediato depois da compra?
+</div>
+
+</div>
+</section>
+
+
+<section>
+<div class="container">
+
+<h2>S.O.S CASA</h2>
+
+<p>Não viva mais dias sobrecarregada.</p>
+
+<p>Não gaste horas tentando adivinhar o que fazer.</p>
+
+<p>Tenha as soluções certas na hora certa.</p>
+
+<a class="cta">SIM, EU QUERO RESOLVER MINHA CASA AGORA!</a>
+
+</div>
+</section>
+
+
+<footer>
+<div class="container">
+
+<p>S.O.S CASA — Todos os direitos reservados.</p>
+
+</div>
 </footer>
 
 
-<!-- BARRA FIXA -->
-
-<div class="fixed-cta">
-
-<a href="#comprar" class="btn-cta text-lg">
-
-🔥 GARANTIR ACESSO POR R$10
-
-</a>
-
-</div>
-
-
-<script>
-
-/* animação ao rolar */
-
-const fades=document.querySelectorAll('.fade')
-
-window.addEventListener('scroll',()=>{
-
-fades.forEach(el=>{
-
-const pos=el.getBoundingClientRect().top
-
-if(pos<window.innerHeight-100){
-
-el.classList.add('show')
-
-}
-
-})
-
-})
-
-/* contador dinâmico */
-
-setInterval(()=>{
-
-let num=document.getElementById("contador")
-
-num.innerText=parseInt(num.innerText)+Math.floor(Math.random()*2)
-
-},4000)
-
-</script>
-
 </body>
 </html>
+```
