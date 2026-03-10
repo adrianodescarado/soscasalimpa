@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +12,7 @@
 
 <style>
 
-:root {
+:root{
 --primary-green:#2d5a27;
 --accent-yellow:#f4b400;
 --bg-cream:#f9f7f2;
@@ -38,186 +40,44 @@ background:#e0a300;
 
 </head>
 
-
-<div id="purchasePopup" style="position:fixed;bottom:20px;left:20px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);display:none;font-size:14px;z-index:9999;"></div>
-
-
-<script>
-
-/* CONTADOR DE PESSOAS NA PÁGINA */
-
-setInterval(()=>{
-
-let el=document.getElementById("viewers")
-let num=parseInt(el.innerText)
-
-let change=Math.floor(Math.random()*6)-2
-
-num=num+change
-
-if(num<32) num=32
-if(num>84) num=84
-
-el.innerText=num
-
-},4000)
-
-
-/* CONTADOR DE VAGAS */
-
-setInterval(()=>{
-
-let el=document.getElementById("spots")
-
-if(!el) return
-
-let num=parseInt(el.innerText)
-
-if(num>7){
-num--
-}
-
-el.innerText=num
-
-},20000)
-
-
-/* POPUP DE COMPRA */
-
-const buyers=[
-
-"Mariana - SP",
-"Juliana - RJ",
-"Patricia - MG",
-"Carla - PR",
-"Renata - BA",
-"Aline - SC",
-"Fernanda - GO",
-"Vanessa - RS",
-"Luciana - DF"
-
-]
-
-setInterval(()=>{
-
-let popup=document.getElementById("purchasePopup")
-
-if(!popup) return
-
-let name=buyers[Math.floor(Math.random()*buyers.length)]
-
-popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o guia."
-
-popup.style.display="block"
-
-setTimeout(()=>{
-popup.style.display="none"
-},4000)
-
-},15000)
-
-
-
-/* COMENTÁRIOS FACEBOOK */
-
-const commentsData=[]
-
-const names=["Mariana","Juliana","Patricia","Carla","Renata","Luciana","Fernanda","Bianca","Aline","Tatiane"]
-
-const texts=[
-
-"Alguém já comprou? Funciona mesmo?",
-"Estou lendo os comentários antes de decidir.",
-"Vi no Instagram e vim pesquisar melhor.",
-"Parece bem prático para o dia a dia.",
-"Minha rotina é corrida então isso ajuda muito.",
-"Gostei porque parece simples.",
-"Se funcionar para mofo já ajuda bastante.",
-"Minha mãe vive reclamando dessas manchas."
-]
-
-for(let i=0;i<87;i++){
-
-commentsData.push({
-
-name:names[Math.floor(Math.random()*names.length)]+" "+["Silva","Souza","Costa","Oliveira"][Math.floor(Math.random()*4)],
-
-avatar:"https://randomuser.me/api/portraits/women/"+Math.floor(Math.random()*90)+".jpg",
-
-text:texts[Math.floor(Math.random()*texts.length)],
-
-time:Math.floor(Math.random()*59)+" min",
-
-likes:Math.floor(Math.random()*40)
-
-})
-
-}
-
-let visibleComments=5
-
-function renderComments(){
-
-const container=document.getElementById("comments-container")
-
-if(!container) return
-
-container.innerHTML=""
-
-commentsData.slice(0,visibleComments).forEach(c=>{
-
-container.innerHTML+=`
-
-<div style="margin-bottom:15px;">
-
-<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
-
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
-
-<strong>${c.name}</strong>
-
-<div>${c.text}</div>
-
-</div>
-
-<div style="font-size:12px;color:#65676b;margin-left:45px;">
-Curtir · Responder · ${c.time} · ❤️ ${c.likes}
-</div>
-
-</div>
-
-`
-
-})
-
-}
-
-document.getElementById("loadMoreBtn").onclick=function(){
-
-visibleComments+=5
-renderComments()
-
-}
-
-renderComments()
-
-</script>
-
 <body>
 
-<div id="urgencyBar" style="position:fixed;top:0;left:0;width:100%;background:#ff3b30;color:white;text-align:center;padding:10px;font-weight:bold;z-index:9999;">
+<!-- BARRA DE URGÊNCIA -->
+
+<div id="urgencyBar"
+style="position:fixed;top:0;left:0;width:100%;background:#ff3b30;color:white;text-align:center;padding:10px;font-weight:bold;z-index:9999;">
+
 🔥 <span id="buyersCount">1.247</span> pessoas baixaram o guia este mês • Restam <span id="spots">23</span> acessos promocionais
+
 </div>
 
-<!-- HEADER / LOGO -->
+
+<!-- POPUP DE COMPRA -->
+
+<div id="purchasePopup"
+style="position:fixed;bottom:20px;left:20px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);display:none;font-size:14px;z-index:9999;">
+</div>
+
+
+<!-- HEADER -->
 
 <header class="bg-stone-900 shadow-sm">
 
+<div class="max-w-6xl mx-auto flex justify-center py-6">
+
 <div class="bg-white rounded-full p-4 inline-block">
+
 <img src="images/logo.png" class="w-40 md:w-56">
-</div></div>
+
+</div>
+
+</div>
 
 </header>
+
+
+
+
 
 
 <!-- HERO -->
@@ -1007,30 +867,6 @@ COMPRAR AGORA
 
 
 <!-- COMENTÁRIOS FACEBOOK -->
-
-<section class="bg-white py-20 px-6">
-
-<div class="max-w-4xl mx-auto">
-
-<div style="background:#1877f2;color:white;padding:10px 15px;border-radius:6px 6px 0 0;font-weight:bold;">
-Comentários
-</div>
-
-<div style="border:1px solid #ddd;padding:20px;border-top:none;">
-
-<div id="comments-container"></div>
-
-<button id="loadMoreBtn"
-style="margin-top:15px;background:none;border:none;color:#1877f2;cursor:pointer;font-weight:bold;">
-Ver mais comentários
-</button>
-
-</div>
-
-</div>
-
-</section>
-
 
 <section class="bg-[#0c2b4b] text-white py-24 px-6 text-center">
 
