@@ -38,20 +38,184 @@ background:#e0a300;
 
 </head>
 
+
+<div id="purchasePopup" style="position:fixed;bottom:20px;left:20px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);display:none;font-size:14px;z-index:9999;"></div>
+
+
+<script>
+
+/* CONTADOR DE PESSOAS NA PÁGINA */
+
+setInterval(()=>{
+
+let el=document.getElementById("viewers")
+let num=parseInt(el.innerText)
+
+let change=Math.floor(Math.random()*6)-2
+
+num=num+change
+
+if(num<32) num=32
+if(num>84) num=84
+
+el.innerText=num
+
+},4000)
+
+
+/* CONTADOR DE VAGAS */
+
+setInterval(()=>{
+
+let el=document.getElementById("spots")
+
+if(!el) return
+
+let num=parseInt(el.innerText)
+
+if(num>7){
+num--
+}
+
+el.innerText=num
+
+},20000)
+
+
+/* POPUP DE COMPRA */
+
+const buyers=[
+
+"Mariana - SP",
+"Juliana - RJ",
+"Patricia - MG",
+"Carla - PR",
+"Renata - BA",
+"Aline - SC",
+"Fernanda - GO",
+"Vanessa - RS",
+"Luciana - DF"
+
+]
+
+setInterval(()=>{
+
+let popup=document.getElementById("purchasePopup")
+
+if(!popup) return
+
+let name=buyers[Math.floor(Math.random()*buyers.length)]
+
+popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o guia."
+
+popup.style.display="block"
+
+setTimeout(()=>{
+popup.style.display="none"
+},4000)
+
+},15000)
+
+
+
+/* COMENTÁRIOS FACEBOOK */
+
+const commentsData=[]
+
+const names=["Mariana","Juliana","Patricia","Carla","Renata","Luciana","Fernanda","Bianca","Aline","Tatiane"]
+
+const texts=[
+
+"Alguém já comprou? Funciona mesmo?",
+"Estou lendo os comentários antes de decidir.",
+"Vi no Instagram e vim pesquisar melhor.",
+"Parece bem prático para o dia a dia.",
+"Minha rotina é corrida então isso ajuda muito.",
+"Gostei porque parece simples.",
+"Se funcionar para mofo já ajuda bastante.",
+"Minha mãe vive reclamando dessas manchas."
+]
+
+for(let i=0;i<87;i++){
+
+commentsData.push({
+
+name:names[Math.floor(Math.random()*names.length)]+" "+["Silva","Souza","Costa","Oliveira"][Math.floor(Math.random()*4)],
+
+avatar:"https://randomuser.me/api/portraits/women/"+Math.floor(Math.random()*90)+".jpg",
+
+text:texts[Math.floor(Math.random()*texts.length)],
+
+time:Math.floor(Math.random()*59)+" min",
+
+likes:Math.floor(Math.random()*40)
+
+})
+
+}
+
+let visibleComments=5
+
+function renderComments(){
+
+const container=document.getElementById("comments-container")
+
+if(!container) return
+
+container.innerHTML=""
+
+commentsData.slice(0,visibleComments).forEach(c=>{
+
+container.innerHTML+=`
+
+<div style="margin-bottom:15px;">
+
+<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
+
+<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
+
+<strong>${c.name}</strong>
+
+<div>${c.text}</div>
+
+</div>
+
+<div style="font-size:12px;color:#65676b;margin-left:45px;">
+Curtir · Responder · ${c.time} · ❤️ ${c.likes}
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+document.getElementById("loadMoreBtn").onclick=function(){
+
+visibleComments+=5
+renderComments()
+
+}
+
+renderComments()
+
+</script>
+
 <body>
 
+<div id="urgencyBar" style="position:fixed;top:0;left:0;width:100%;background:#ff3b30;color:white;text-align:center;padding:10px;font-weight:bold;z-index:9999;">
+🔥 <span id="buyersCount">1.247</span> pessoas baixaram o guia este mês • Restam <span id="spots">23</span> acessos promocionais
+</div>
 
 <!-- HEADER / LOGO -->
 
 <header class="bg-stone-900 shadow-sm">
 
-<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
-<img src="images/logo.png" 
-alt="SOS Casa" 
-class="w-40 md:w-56">
-
-</div>
+<div class="bg-white rounded-full p-4 inline-block">
+<img src="images/logo.png" class="w-40 md:w-56">
+</div></div>
 
 </header>
 
@@ -95,6 +259,9 @@ SIM, EU QUERO RESOLVER MINHA CASA AGORA
 
 </section>
 
+<div class="bg-yellow-100 border border-yellow-300 p-3 rounded-lg text-center my-6 max-w-md mx-auto">
+👥 <strong><span id="viewers">47</span> pessoas</strong> estão vendo esta página agora
+</div>
 
 <!-- HISTÓRIA ROMILDA -->
 
@@ -924,181 +1091,25 @@ S.O.S CASA — © 2026 SOS Casa - Todos os direitos reservados.
 
 
 
-<script>
+<section class="bg-white py-20 px-6">
 
-/* COMENTÁRIOS FACEBOOK */
+<div class="max-w-4xl mx-auto">
 
-const commentsData = [
-
-{
-name:"Mariana Souza",
-avatar:"https://randomuser.me/api/portraits/women/55.jpg",
-text:"Estou acompanhando os comentários e parece interessante. Alguém que comprou pode dizer se realmente funciona para cheiro de mofo no colchão?",
-time:"12 min",
-likes:18,
-replies:[
-{
-name:"S.O.S Casa",
-avatar:"https://randomuser.me/api/portraits/women/44.jpg",
-text:"Oi Mariana 😊 Sim, o guia tem uma solução específica para colchão com odor e manchas. É uma das técnicas mais usadas pelas leitoras.",
-time:"10 min",
-likes:7
-}
-]
-},
-
-{
-name:"Roberta Lima",
-avatar:"https://randomuser.me/api/portraits/women/31.jpg",
-text:"Eu sempre tive dificuldade com manchas antigas no sofá. Já tentei vários produtos e nada resolveu completamente.",
-time:"25 min",
-likes:34,
-replies:[]
-},
-
-{
-name:"Juliana Costa",
-avatar:"https://randomuser.me/api/portraits/women/48.jpg",
-text:"Tem acesso imediato depois da compra ou demora para liberar?",
-time:"27 min",
-likes:12,
-replies:[
-{
-name:"S.O.S Casa",
-avatar:"https://randomuser.me/api/portraits/women/44.jpg",
-text:"O acesso é liberado imediatamente após a confirmação do pagamento 👍",
-time:"25 min",
-likes:6
-}
-]
-},
-
-{
-name:"Camila Rocha",
-avatar:"https://randomuser.me/api/portraits/women/61.jpg",
-text:"Pelo que vi parece tudo organizado por categorias. Isso ajuda muito quem não tem tempo.",
-time:"30 min",
-likes:29,
-replies:[]
-},
-
-{
-name:"Patrícia Mendes",
-avatar:"https://randomuser.me/api/portraits/women/42.jpg",
-text:"Gostei da parte de resolver gordura da cozinha. Aqui em casa sempre acumula e é difícil limpar.",
-time:"34 min",
-likes:41,
-replies:[]
-},
-
-{
-name:"Ana Paula Martins",
-avatar:"https://randomuser.me/api/portraits/women/22.jpg",
-text:"Eu comprei ontem e já usei a dica para limpar o microondas. Funcionou mesmo.",
-time:"40 min",
-likes:52,
-replies:[]
-},
-
-{
-name:"Luciana Fernandes",
-avatar:"https://randomuser.me/api/portraits/women/63.jpg",
-text:"Minha dúvida é se serve para quem mora em apartamento pequeno.",
-time:"44 min",
-likes:8,
-replies:[
-{
-name:"S.O.S Casa",
-avatar:"https://randomuser.me/api/portraits/women/44.jpg",
-text:"Serve sim! As soluções funcionam para qualquer tipo de casa ou apartamento.",
-time:"41 min",
-likes:5
-}
-]
-},
-
-{
-name:"Bianca Ribeiro",
-avatar:"https://randomuser.me/api/portraits/women/11.jpg",
-text:"Aqui em casa o problema é cheiro de cachorro no sofá 😅 alguém já testou?",
-time:"52 min",
-likes:19,
-replies:[]
-}
-
-]
-
-let visibleComments = 3;
-
-function renderComments(){
-
-const container = document.getElementById("comments-container");
-
-container.innerHTML="";
-
-commentsData.slice(0,visibleComments).forEach(c=>{
-
-let repliesHTML="";
-
-if(c.replies.length>0){
-
-c.replies.forEach(r=>{
-
-repliesHTML+=`
-<div style="margin-left:45px;margin-top:8px;">
-<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top;">
-<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:16px;max-width:80%;">
-<strong>${r.name}</strong>
-<div>${r.text}</div>
+<div style="background:#1877f2;color:white;padding:10px 15px;border-radius:6px 6px 0 0;font-weight:bold;">
+💬 87 Comentários
 </div>
-<div style="font-size:11px;color:#65676b;margin-left:40px;">
-Curtir · Responder · ${r.time} · ❤️ ${r.likes}
-</div>
-</div>
-`
-})
 
-}
+<div style="border:1px solid #ddd;padding:20px;border-top:none;">
 
-container.innerHTML+=`
+<div id="comments-container"></div>
 
-<div style="margin-bottom:15px;">
-
-<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top;">
-
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
-
-<strong>${c.name}</strong>
-
-<div>${c.text}</div>
+<button id="loadMoreBtn"
+style="margin-top:15px;background:none;border:none;color:#1877f2;cursor:pointer;font-weight:bold;">
+Ver mais comentários
+</button>
 
 </div>
 
-<div style="font-size:12px;color:#65676b;margin-left:45px;">
-Curtir · Responder · ${c.time} · ❤️ ${c.likes}
 </div>
 
-${repliesHTML}
-
-</div>
-
-`
-
-});
-
-}
-
-document.getElementById("loadMoreBtn").onclick=function(){
-
-visibleComments+=2;
-
-renderComments();
-
-}
-
-renderComments();
-
-</script>
-
-</body>
-</html>
+</section>
