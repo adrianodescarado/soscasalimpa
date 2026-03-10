@@ -923,21 +923,21 @@ S.O.S CASA — © 2026 SOS Casa - Todos os direitos reservados.
 </section>
 
 
-<div style="max-width:650px;margin:auto;font-family:Arial,Helvetica,sans-serif;margin-top:40px;">
+<div style="max-width:650px;margin:auto;font-family:Arial,Helvetica,sans-serif;margin-top:40px">
 
-<h3 id="comments-count">87 comentários</h3>
+<h3 id="commentsCount">87 comentários</h3>
 
-<div id="comments-container"></div>
+<div id="commentsBox"></div>
 
-<button id="loadMoreBtn" style="
-margin-top:15px;
+<button id="loadMore" style="
 background:#1877f2;
-border:none;
 color:white;
+border:none;
 padding:10px 18px;
 border-radius:6px;
 cursor:pointer;
-font-weight:bold;">
+font-weight:bold;
+margin-top:15px;">
 Ver mais comentários
 </button>
 
@@ -945,27 +945,28 @@ Ver mais comentários
 
 <script>
 
-/* COMENTÁRIOS ESTILO FACEBOOK */
+/* BASE DE COMENTÁRIOS */
 
-const commentsData = [
+let commentsData=[
 
 {
 name:"Mariana Souza",
 avatar:"https://randomuser.me/api/portraits/women/55.jpg",
-text:"Estou lendo os comentários antes de decidir comprar. Sempre tive muita dificuldade com manchas no sofá e já testei vários produtos que prometiam resolver e no final não funcionavam como esperado. Alguém aqui já conseguiu resolver esse tipo de problema usando as dicas do aplicativo?",
+text:"Estou lendo todos os comentários antes de decidir comprar. Sempre tive dificuldade com manchas no sofá e já testei vários produtos que prometiam resolver, mas nenhum funcionou muito bem. Alguém aqui já conseguiu resolver isso usando as dicas?",
 time:"12 min",
-likes:28,
+likes:32,
+liked:false,
 replies:[
 {
 name:"Roberta Lima",
 avatar:"https://randomuser.me/api/portraits/women/31.jpg",
-text:"Eu tinha esse mesmo problema aqui em casa. Testei uma das orientações que aparece no aplicativo e consegui melhorar bastante o sofá.",
+text:"Eu tinha esse problema também. Testei uma das orientações e consegui melhorar bastante o sofá.",
 time:"9 min"
 },
 {
 name:"S.O.S Casa",
 avatar:"https://randomuser.me/api/portraits/women/90.jpg",
-text:"Oi Mariana 😊 Temos orientações específicas para manchas em sofá, inclusive para manchas antigas.",
+text:"Oi Mariana 😊 temos um passo a passo específico para manchas em sofá.",
 time:"7 min",
 verified:true
 }
@@ -975,79 +976,41 @@ verified:true
 {
 name:"Juliana Costa",
 avatar:"https://randomuser.me/api/portraits/women/48.jpg",
-text:"Sempre fico desconfiada antes de comprar qualquer coisa online, mas estou vendo muita gente comentando aqui que realmente ajuda na rotina da casa. Alguém já está usando há mais tempo?",
-time:"22 min",
-likes:34,
+text:"Sempre fico com receio antes de comprar algo online, mas estou vendo muita gente comentando aqui que realmente ajuda na rotina da casa.",
+time:"18 min",
+likes:21,
+liked:false,
 replies:[
 {
 name:"Camila Rocha",
 avatar:"https://randomuser.me/api/portraits/women/61.jpg",
-text:"Eu comprei semana passada e já usei algumas dicas para limpar o fogão e a pia. Achei bem prático.",
-time:"18 min"
+text:"Eu comprei semana passada e já usei algumas dicas para limpar a cozinha.",
+time:"15 min"
 }
 ]
-},
-
-{
-name:"Larissa Fernandes",
-avatar:"https://randomuser.me/api/portraits/women/26.jpg",
-text:"Uma dúvida sincera: precisa comprar muitos produtos específicos ou dá para fazer com coisas que já temos em casa?",
-time:"30 min",
-likes:19,
-replies:[
-{
-name:"S.O.S Casa",
-avatar:"https://randomuser.me/api/portraits/women/90.jpg",
-text:"Grande parte das soluções utiliza itens comuns que você provavelmente já tem em casa 😊",
-time:"28 min",
-verified:true
-}
-]
-},
-
-{
-name:"Renata Silva",
-avatar:"https://randomuser.me/api/portraits/women/65.jpg",
-text:"Comprei ontem e comecei a testar algumas orientações hoje. Uma delas me ajudou a tirar gordura acumulada da cozinha que eu não conseguia remover fazia tempo.",
-time:"35 min",
-likes:47,
-replies:[]
-},
-
-{
-name:"Patrícia Mendes",
-avatar:"https://randomuser.me/api/portraits/women/42.jpg",
-text:"Estou impressionada com a quantidade de gente comentando aqui. Parece que realmente muita gente está usando.",
-time:"40 min",
-likes:21,
-replies:[]
 }
 
 ];
 
 
-/* GERADOR AUTOMÁTICO DE MAIS COMENTÁRIOS */
+/* GERAR COMENTÁRIOS AUTOMÁTICOS */
 
-const names = [
-"Aline","Vanessa","Carla","Fernanda","Paula","Gabriela","Bianca","Tatiane","Luciana","Flávia",
-"Daniela","Simone","Cláudia","Rafaela","Bruna","Adriana","Patricia","Renata","Camila","Juliana"
+const names=["Aline","Vanessa","Carla","Fernanda","Paula","Gabriela","Bianca","Tatiane","Luciana","Flávia","Daniela","Simone","Cláudia","Rafaela","Bruna","Adriana"];
+
+const texts=[
+
+"Estou acompanhando os comentários e parece realmente interessante.",
+"Minha rotina é muito corrida então qualquer coisa que ajude na organização da casa já ajuda bastante.",
+"Vi alguém comentando sobre isso no Instagram e resolvi pesquisar.",
+"Parece ser bem prático para quem tem pouco tempo.",
+"Gostei da proposta porque parece simples de aplicar.",
+"Se realmente ajudar com gordura na cozinha já vai valer muito.",
+"Estou pensando em comprar depois de ler tantos comentários.",
+"Alguém aqui já usa há mais tempo?"
+
 ];
 
-const texts = [
-
-"Estou acompanhando os comentários e achei a proposta muito interessante.",
-"Eu sempre tive dificuldade com manchas na cozinha, se realmente ajudar já vale muito.",
-"Gostei da ideia de ter tudo organizado em um aplicativo.",
-"Minha rotina é muito corrida então qualquer coisa que facilite já ajuda bastante.",
-"Estou pensando seriamente em comprar depois de ler tantos comentários positivos.",
-"Gostei muito da proposta porque parece simples de aplicar.",
-"Vi alguém comentando sobre isso no Instagram e resolvi procurar.",
-"Se realmente resolver gordura acumulada já vai ajudar muito aqui em casa.",
-"Parece ser muito mais prático do que ficar procurando dicas aleatórias na internet.",
-"Estou acompanhando os comentários antes de decidir."
-];
-
-for(let i=0;i<75;i++){
+for(let i=0;i<80;i++){
 
 commentsData.push({
 
@@ -1061,6 +1024,8 @@ time:Math.floor(Math.random()*59)+" min",
 
 likes:Math.floor(Math.random()*60),
 
+liked:false,
+
 replies:[]
 
 });
@@ -1070,37 +1035,34 @@ replies:[]
 
 /* SISTEMA DE EXIBIÇÃO */
 
-let visibleComments=5;
+let visible=5;
 
-function renderComments(){
+function render(){
 
-const container=document.getElementById("comments-container");
+const box=document.getElementById("commentsBox");
 
-container.innerHTML="";
+box.innerHTML="";
 
-commentsData.slice(0,visibleComments).forEach(c=>{
+commentsData.slice(0,visible).forEach((c,i)=>{
 
 let repliesHTML="";
-
-if(c.replies){
 
 c.replies.forEach(r=>{
 
 repliesHTML+=`
 
-<div style="margin-left:45px;margin-top:8px;">
+<div style="margin-left:45px;margin-top:8px">
 
-<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top;">
+<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top">
 
-<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:18px;max-width:75%;">
+<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:18px;max-width:75%">
 
 <strong>${r.name} ${r.verified?"✔️":""}</strong>
-
 <div>${r.text}</div>
 
 </div>
 
-<div style="font-size:12px;color:#65676b;margin-left:40px;">${r.time}</div>
+<div style="font-size:12px;color:#65676b;margin-left:40px">${r.time}</div>
 
 </div>
 
@@ -1108,25 +1070,27 @@ repliesHTML+=`
 
 });
 
-}
+box.innerHTML+=`
 
-container.innerHTML+=`
+<div style="margin-bottom:16px">
 
-<div style="margin-bottom:15px;">
+<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
 
-<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top;">
-
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
+<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%">
 
 <strong>${c.name}</strong>
-
 <div>${c.text}</div>
 
 </div>
 
-<div style="font-size:12px;color:#65676b;margin-left:45px;">
+<div style="font-size:12px;color:#65676b;margin-left:45px">
 
-Curtir · Responder · ${c.time} · ❤️ ${c.likes}
+<span style="cursor:pointer;color:${c.liked?"#1877f2":"#65676b"}"
+onclick="like(${i})">Curtir</span>
+
+· Responder · ${c.time}
+
+<span style="margin-left:10px">❤️ ${c.likes}</span>
 
 </div>
 
@@ -1140,14 +1104,71 @@ ${repliesHTML}
 
 }
 
-document.getElementById("loadMoreBtn").onclick=function(){
+function like(i){
 
-visibleComments+=5;
+if(!commentsData[i].liked){
 
-renderComments();
+commentsData[i].likes++;
+
+commentsData[i].liked=true;
+
+}else{
+
+commentsData[i].likes--;
+
+commentsData[i].liked=false;
+
+}
+
+render();
+
+}
+
+
+/* VER MAIS */
+
+document.getElementById("loadMore").onclick=function(){
+
+visible+=5;
+
+render();
 
 };
 
-renderComments();
+
+/* NOVOS COMENTÁRIOS AUTOMÁTICOS */
+
+setInterval(()=>{
+
+const name=names[Math.floor(Math.random()*names.length)];
+
+const text=texts[Math.floor(Math.random()*texts.length)];
+
+commentsData.unshift({
+
+name:name+" "+["Silva","Souza","Costa"][Math.floor(Math.random()*3)],
+
+avatar:"https://randomuser.me/api/portraits/women/"+Math.floor(Math.random()*90)+".jpg",
+
+text:text,
+
+time:"agora",
+
+likes:Math.floor(Math.random()*10),
+
+liked:false,
+
+replies:[]
+
+});
+
+document.getElementById("commentsCount").innerText=(87+Math.floor(Math.random()*40))+" comentários";
+
+render();
+
+},25000);
+
+
+render();
 
 </script>
