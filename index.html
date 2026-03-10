@@ -32,6 +32,16 @@ transform:scale(1.05);
 background:#e0a300;
 }
 
+@keyframes pulseCTA{
+0%{transform:scale(1);}
+50%{transform:scale(1.07);}
+100%{transform:scale(1);}
+}
+
+.btn-cta{
+animation:pulseCTA 1.8s infinite;
+}
+
 body{
 font-family:'Inter',sans-serif;
 background:var(--bg-cream);
@@ -812,7 +822,7 @@ R$ 27,00
 
 </h2>
 
-<p class="text-xl mb-8">
+<p class="text-xl mb-12">
 
 Acesso imediato após pagamento
 
@@ -831,17 +841,15 @@ Acesso imediato após pagamento
 🛡️ Garantia incondicional de 7 dias
 </p>
 
+<p class="text-sm mt-4 text-green-100">
+✅ 100 soluções domésticas
+</p>
+
 <p class="text-xs text-green-200">
 Se não gostar, devolvemos 100% do seu dinheiro.
 </p>
 
 <ul class="text-left inline-block mb-10 space-y-2">
-
-<li>✔ 100 soluções domésticas</li>
-<li>✔ Checklist semanal</li>
-<li>✔ Cronograma de 15 min</li>
-<li>✔ Lista de misturas caseiras</li>
-<li>✔ Garantia de 7 dias</li>
 
 </ul>
 
