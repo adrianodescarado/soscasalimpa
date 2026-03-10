@@ -1,8 +1,45 @@
-<!-- ========================= -->
-<!-- 4️⃣ BARRA DE URGÊNCIA FIXA -->
-<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
 
-<div style="
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOS Casa</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+:root{
+--primary-green:#2d5a27;
+--accent-yellow:#f4b400;
+--bg-cream:#f9f7f2;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg-cream);
+}
+
+/* BOTÃO */
+
+.btn-cta{
+background:var(--accent-yellow);
+color:#000;
+font-weight:bold;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn-cta:hover{
+transform:scale(1.05);
+background:#e0a300;
+}
+
+/* BARRA URGÊNCIA */
+
+#urgencyBar{
 position:fixed;
 top:0;
 left:0;
@@ -13,215 +50,193 @@ text-align:center;
 padding:10px;
 font-weight:bold;
 z-index:9999;
-font-family:Arial;
-">
+}
 
-🔥 Oferta especial liberada hoje
+/* CONTADOR PESSOAS */
 
-</div>
-
-
-<!-- ========================= -->
-<!-- 1️⃣ PESSOAS NA PÁGINA -->
-<!-- ========================= -->
-
-<div style="
+.viewers-box{
 background:#fff3cd;
 border:1px solid #ffeeba;
 padding:12px;
 border-radius:10px;
 text-align:center;
-margin:40px auto;
-max-width:500px;
-font-family:Arial;
-">
-
-👥 <strong><span id="viewers">47</span> pessoas</strong> estão vendo esta página agora
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- 3️⃣ CONTADOR DE VAGAS -->
-<!-- ========================= -->
-
-<div style="
-background:#ffe5e5;
-border:1px solid #ffb3b3;
-padding:12px;
-border-radius:10px;
-text-align:center;
 margin:20px auto;
-max-width:500px;
-font-family:Arial;
-">
+max-width:400px;
+}
 
-⚠️ Restam apenas <strong><span id="spots">23</span></strong> acessos disponíveis hoje
+/* POPUP COMPRA */
 
-</div>
-
-
-
-<!-- ========================= -->
-<!-- 5️⃣ COMENTÁRIOS FACEBOOK -->
-<!-- ========================= -->
-
-<section style="max-width:700px;margin:40px auto;font-family:Arial">
-
-<h3 style="margin-bottom:20px">87 comentários</h3>
-
-<div id="comments-container"></div>
-
-<button id="loadMoreBtn" style="
-margin-top:20px;
-background:none;
-border:none;
-color:#1877f2;
-font-weight:bold;
-cursor:pointer;
-">
-
-Ver mais comentários
-
-</button>
-
-</section>
-
-
-
-<!-- ========================= -->
-<!-- 2️⃣ POPUP DE COMPRA -->
-<!-- ========================= -->
-
-<div id="purchasePopup" style="
+#purchasePopup{
 position:fixed;
 bottom:20px;
 left:20px;
 background:white;
 padding:12px 16px;
 border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-font-size:14px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
 display:none;
 z-index:9999;
-max-width:260px;
-font-family:Arial;
-">
+font-size:14px;
+}
 
-<strong id="buyerName"></strong> acabou de adquirir o acesso.
+/* LOGO REDONDO */
+
+.logo-round{
+background:white;
+padding:10px;
+border-radius:999px;
+display:inline-flex;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* COMENTÁRIOS */
+
+.comment{
+margin-bottom:15px;
+}
+
+.comment-box{
+display:inline-block;
+background:#f0f2f5;
+padding:10px 14px;
+border-radius:18px;
+max-width:80%;
+}
+
+.comment-info{
+font-size:12px;
+color:#65676b;
+margin-left:45px;
+}
+
+.reply{
+margin-left:50px;
+margin-top:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- BARRA URGÊNCIA -->
+
+<div id="urgencyBar">
+🔥 Oferta especial liberada hoje • Restam apenas <span id="spots">23</span> acessos
+</div>
+
+
+<!-- HEADER -->
+
+<header class="bg-stone-900 shadow-sm mt-10">
+
+<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+<div class="logo-round">
+<img src="images/logo.png" class="w-40 md:w-56">
+</div>
 
 </div>
 
+</header>
+
+
+<!-- HERO -->
+
+<section class="bg-stone-900 text-white py-7 px-6">
+
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+
+<div class="md:w-1/2">
+
+<h1 class="text-5xl font-extrabold mb-6">
+<span class="text-yellow-300">ATENÇÃO:</span> Cansada de se sentir sobrecarregada com os problemas da sua casa?
+</h1>
+
+<p class="text-xl text-gray-300 mb-6">
+Xixi no colchão, cheiro de mofo, sujeira impossível… pequenos problemas que roubam sua paz todos os dias.
+</p>
+
+<p class="text-lg mb-10">
+Existe um jeito simples de resolver 100 problemas domésticos usando coisas que você já tem em casa.
+</p>
+
+<a href="#comprar" class="btn-cta px-10 py-4 text-xl inline-block">
+SIM, EU QUERO RESOLVER MINHA CASA AGORA
+</a>
+
+</div>
+
+<div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+
+<img src="images/romilda10.jpg"
+class="rounded-lg shadow-2xl w-[400px]">
+
+</div>
+
+</section>
+
+
+<!-- CONTADOR PESSOAS -->
+
+<div class="viewers-box">
+👥 <strong><span id="viewers">47</span> pessoas</strong> estão vendo esta página agora
+</div>
+
+
+<!-- COMENTÁRIOS FACEBOOK -->
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-4xl mx-auto">
+
+<div style="background:#1877f2;color:white;padding:10px 15px;border-radius:6px 6px 0 0;font-weight:bold;">
+Comentários (87)
+</div>
+
+<div style="border:1px solid #ddd;padding:20px;border-top:none;">
+
+<div id="comments-container"></div>
+
+<button id="loadMoreBtn"
+style="margin-top:15px;background:none;border:none;color:#1877f2;cursor:pointer;font-weight:bold;">
+Ver mais comentários
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POPUP COMPRA -->
+
+<div id="purchasePopup">
+<strong id="buyerName"></strong> acabou de adquirir o acesso.
+</div>
 
 
 <script>
 
-
-/* ========================= */
-/* CONTADOR DE PESSOAS */
-/* ========================= */
-
-setInterval(function(){
-
-let viewers=document.getElementById("viewers")
-
-let num=parseInt(viewers.innerText)
-
-let change=Math.floor(Math.random()*6)-2
-
-num=num+change
-
-if(num<38) num=38
-if(num>83) num=83
-
-viewers.innerText=num
-
-},4000)
-
-
-
-/* ========================= */
-/* CONTADOR DE VAGAS */
-/* ========================= */
-
-setInterval(()=>{
-
-let el=document.getElementById("spots")
-
-let num=parseInt(el.innerText)
-
-if(num>7){
-
-num--
-
-}
-
-el.innerText=num
-
-},20000)
-
-
-
-/* ========================= */
-/* POPUP DE COMPRA */
-/* ========================= */
-
-const buyers=[
-"Mariana - SP",
-"Juliana - RJ",
-"Patricia - MG",
-"Carla - PR",
-"Renata - BA",
-"Aline - SC",
-"Fernanda - GO",
-"Vanessa - RS"
-]
-
-setInterval(()=>{
-
-let popup=document.getElementById("purchasePopup")
-
-let name=buyers[Math.floor(Math.random()*buyers.length)]
-
-document.getElementById("buyerName").innerText=name
-
-popup.style.display="block"
-
-setTimeout(()=>{
-
-popup.style.display="none"
-
-},4000)
-
-},15000)
-
-
-
-/* ========================= */
 /* COMENTÁRIOS */
-/* ========================= */
 
 const commentsData=[
 
 {
 name:"Mariana Souza",
 avatar:"https://randomuser.me/api/portraits/women/55.jpg",
-text:"Estou lendo os comentários antes de comprar. Tenho dois netos e sempre acontece de molhar o colchão.",
+text:"Estou lendo os comentários antes de comprar. Tenho dois netos pequenos e sempre acontece de molhar o colchão.",
 time:"12 min",
 likes:18,
 replies:[
 {
-name:"Roberta Lima",
-avatar:"https://randomuser.me/api/portraits/women/31.jpg",
-text:"Mariana eu tinha esse problema aqui em casa também e consegui melhorar bastante.",
-time:"9 min"
-},
-{
-name:"S.O.S Casa",
+name:"S.O.S Casa Oficial",
 avatar:"https://randomuser.me/api/portraits/women/90.jpg",
-text:"Sim 😊 temos um passo a passo específico para esse tipo de situação.",
-time:"7 min"
+text:"Sim 😊 Temos um passo a passo específico para esse problema.",
+time:"10 min"
 }
 ]
 },
@@ -229,24 +244,13 @@ time:"7 min"
 {
 name:"Juliana Costa",
 avatar:"https://randomuser.me/api/portraits/women/48.jpg",
-text:"Estou acompanhando os comentários e parece bem organizado.",
+text:"Eu sempre pesquiso bastante antes de comprar algo online.",
 time:"20 min",
-likes:15,
-replies:[]
-},
-
-{
-name:"Patricia Mendes",
-avatar:"https://randomuser.me/api/portraits/women/42.jpg",
-text:"Gostei da parte que fala de gordura da cozinha.",
-time:"35 min",
-likes:33,
+likes:26,
 replies:[]
 }
 
 ]
-
-
 
 /* GERAR MAIS COMENTÁRIOS */
 
@@ -254,13 +258,13 @@ const names=["Aline","Fernanda","Luciana","Tatiane","Paula","Gabriela","Renata",
 
 const texts=[
 
-"Estou lendo os comentários antes de comprar.",
-"Alguém já conseguiu tirar mancha de sofá?",
-"Parece prático para o dia a dia.",
+"Estou lendo todos os comentários antes de decidir.",
+"Alguém já conseguiu tirar mancha de sofá com isso?",
+"Parece bem prático para o dia a dia.",
 "Gostei porque parece simples.",
-"Vi no Instagram e vim pesquisar.",
-"Minha rotina é corrida então isso ajuda.",
-"Se funcionar para mofo já ajuda muito."
+"Vi no Instagram e vim pesquisar melhor.",
+"Minha rotina é corrida então isso ajuda muito.",
+"Se funcionar para mofo já ajuda bastante."
 
 ]
 
@@ -284,10 +288,6 @@ replies:[]
 
 }
 
-
-
-/* RENDER */
-
 let visibleComments=5
 
 function renderComments(){
@@ -304,11 +304,11 @@ c.replies.forEach(r=>{
 
 repliesHTML+=`
 
-<div style="margin-left:50px;margin-top:8px">
+<div class="reply">
 
-<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top;background:white;padding:2px;border-radius:50%">
+<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top">
 
-<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:18px;max-width:80%">
+<div class="comment-box">
 
 <strong>${r.name}</strong>
 
@@ -324,11 +324,11 @@ repliesHTML+=`
 
 container.innerHTML+=`
 
-<div style="margin-bottom:15px">
+<div class="comment">
 
-<img src="${c.avatar}" width="35" style="background:white;padding:2px;border-radius:50%;vertical-align:top">
+<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
 
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%">
+<div class="comment-box">
 
 <strong>${c.name}</strong>
 
@@ -336,7 +336,7 @@ container.innerHTML+=`
 
 </div>
 
-<div style="font-size:12px;color:#65676b;margin-left:45px">
+<div class="comment-info">
 
 Curtir · Responder · ${c.time} · ❤️ ${c.likes}
 
@@ -355,11 +355,82 @@ ${repliesHTML}
 document.getElementById("loadMoreBtn").onclick=function(){
 
 visibleComments+=5
-
 renderComments()
 
 }
 
 renderComments()
 
+
+/* CONTADOR PESSOAS */
+
+setInterval(function(){
+
+let viewers=document.getElementById("viewers")
+let num=parseInt(viewers.innerText)
+
+let change=Math.floor(Math.random()*6)-2
+
+num=num+change
+
+if(num<38) num=38
+if(num>83) num=83
+
+viewers.innerText=num
+
+},4000)
+
+
+/* CONTADOR VAGAS */
+
+setInterval(()=>{
+
+let el=document.getElementById("spots")
+let num=parseInt(el.innerText)
+
+if(num>7){
+num--
+}
+
+el.innerText=num
+
+},20000)
+
+
+/* POPUP COMPRA */
+
+const buyers=[
+
+"Mariana - SP",
+"Juliana - RJ",
+"Patricia - MG",
+"Carla - PR",
+"Renata - BA",
+"Aline - SC",
+"Fernanda - GO",
+"Vanessa - RS"
+
+]
+
+setInterval(()=>{
+
+let popup=document.getElementById("purchasePopup")
+
+let name=buyers[Math.floor(Math.random()*buyers.length)]
+
+document.getElementById("buyerName").innerText=name
+
+popup.style.display="block"
+
+setTimeout(()=>{
+
+popup.style.display="none"
+
+},4000)
+
+},15000)
+
 </script>
+
+</body>
+</html>
