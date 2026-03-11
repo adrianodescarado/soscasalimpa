@@ -1598,8 +1598,7 @@ const cities=["São Paulo","Curitiba","Recife","Salvador","Campinas","Rio de Jan
 let name=names[Math.floor(Math.random()*names.length)];
 let city=cities[Math.floor(Math.random()*cities.length)];
 
-div.innerHTML="🟢 "+name+" de "+city+" acabou de comprar o acesso";
-div.style=`
+div.innerHTML="🟢 "+name+" de "+city+" comprou há "+(Math.floor(Math.random()*3)+1)+" minutos";div.style=`
 position:fixed;
 bottom:20px;
 left:20px;
@@ -1696,6 +1695,8 @@ if(!box) return
 
 box.innerHTML="🟢 "+buyer+" acabou de comprar o acesso"
 
+div.innerHTML="🟢 "+name+" de "+city+" comprou há "+(Math.floor(Math.random()*3)+1)+" minutos";
+
 box.style.display="block"
 
 setTimeout(()=>{
@@ -1708,7 +1709,36 @@ box.style.display="none"
 
 </script>
 
+<div style="
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#2d5a27;
+color:#fff;
+padding:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+font-size:14px;
+z-index:9999;
+">
 
+<span>💰 Cupom de R$10 de desconto — código: <strong>LIMPAR</strong></span>
+
+<a href="#comprar" style="
+background:#f4b400;
+color:#000;
+padding:8px 14px;
+border-radius:6px;
+font-weight:bold;
+text-decoration:none;
+">
+Usar desconto
+</a>
+
+</div>
 
 </body>
 </html>
