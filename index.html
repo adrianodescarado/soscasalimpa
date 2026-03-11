@@ -64,12 +64,25 @@ padding-top:60px;
 
 <body>
 
+<!-- BARRA DE PROGRESSO DE LEITURA -->
+
+<div id="progressBar" style="
+position:fixed;
+top:0;
+left:0;
+width:0%;
+height:4px;
+background:#f4b400;
+z-index:9999;
+transition:width 0.2s;
+"></div>
+
 <!-- BARRA DE URGÊNCIA -->
 
 <div id="urgencyBar"
 style="position:fixed;top:0;left:0;width:100%;background:#ff3b30;color:white;text-align:center;padding:10px;font-weight:bold;z-index:9999;">
 
-🔥 <span id="buyersCount">1.247</span> pessoas baixaram o guia este mês • Restam <span id="spots">23</span> acessos promocionais
+🔥 <span id="buyersCount">1.247</span> pessoas já acessaram o aplicativo este mês • Restam<span id="spots">23</span> acessos promocionais
 
 </div>
 
@@ -469,7 +482,7 @@ Parecia impossível antes… mas agora cada problema tem uma solução simples.
 </p>
 
 <p class="italic text-gray-600">
-“Hoje eu não fico mais perdida. Eu olho o problema, abro o guia e resolvo.”
+“Hoje eu não fico mais perdida. Eu olho o problema, abro o aplicativo e resolvo.”
 </p>
 
 </div>
@@ -839,7 +852,7 @@ Receitas simples com ingredientes baratos que substituem produtos caros.
 <div class="bg-white p-6 rounded-xl shadow-md">
 <h3 class="font-semibold text-lg mb-2">Método Plug & Play</h3>
 <p class="text-gray-600 text-sm">
-Abra o guia, siga o passo a passo e resolva o problema imediatamente.
+Abra o aplicativo, siga o passo a passo e resolva o problema imediatamente.
 </p>
 </div>
 
@@ -924,14 +937,14 @@ Perguntas Frequentes
 <details class="bg-white p-5 rounded-xl shadow cursor-pointer">
 <summary class="font-semibold">O que é o S.O.S CASA?</summary>
 <p class="mt-3 text-gray-600">
-Um guia prático com 100 soluções simples para resolver problemas domésticos rapidamente.
+Um aplicativo online com 100 soluções simples para resolver problemas domésticos rapidamente.
 </p>
 </details>
 
 <details class="bg-white p-5 rounded-xl shadow cursor-pointer">
 <summary class="font-semibold">Preciso saber usar internet?</summary>
 <p class="mt-3 text-gray-600">
-Não. Basta abrir o guia e seguir os passos.
+Não. Basta abrir o aplicativo e seguir os passos.
 </p>
 </details>
 
@@ -969,6 +982,48 @@ Sim. Garantia incondicional de 7 dias.
 </section>
 
 
+
+<!-- DOBRA ARTIGO (DUPLICAÇÃO DA PÁGINA) -->
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-3xl mx-auto">
+
+<p class="text-sm text-gray-500 mb-6">
+Publicado hoje • 8 minutos de leitura
+</p>
+
+<h2 class="text-4xl font-serif mb-6">
+Como pequenas soluções domésticas podem transformar a rotina de uma casa
+</h2>
+
+<p class="text-gray-700 mb-6">
+Quem cuida de uma casa sabe que os problemas aparecem aos poucos.
+Um cheiro estranho no colchão, gordura acumulando na cozinha,
+um armário com cheiro de mofo ou manchas que parecem impossíveis de remover.
+</p>
+
+<p class="text-gray-700 mb-6">
+Foi exatamente isso que aconteceu com <strong>Romilda Santos</strong>.
+Entre cuidar da casa, dos netos e trabalhar com vendas,
+ela sentia que nunca conseguia resolver tudo.
+</p>
+
+<p class="text-gray-700 mb-6">
+Até descobrir um aplicativo simples que mostrava exatamente o que fazer
+para cada problema doméstico.
+</p>
+
+<p class="text-gray-700 mb-10">
+Hoje, sempre que algo acontece, ela simplesmente abre o aplicativo
+e encontra a solução em poucos segundos.
+</p>
+
+</div>
+
+</section>
+
+
 <!-- OFERTA -->
 
 <section id="QUERO O GUIA S.O.S CASA AGORA" class="py-20 px-6">
@@ -999,8 +1054,7 @@ Acesso imediato após pagamento
 
 
 <p class="text-red-200 text-sm mt-2">
-⚠️ Mais de 1.200 pessoas já baixaram o guia este mês
-</p>
+⚠️ Mais de 1.200 pessoas já ativaram o acesso ao aplicativo este mês</p>
 
 <p class="text-sm mt-4 text-green-100">
 🛡️ Garantia incondicional de 7 dias
@@ -1022,8 +1076,7 @@ Se não gostar, devolvemos 100% do seu dinheiro.
 
 <a href="#" class="btn-cta px-12 py-5 text-2xl inline-block">
 
-COMPRAR AGORA
-
+QUERO ACESSAR O APLICATIVO AGORA
 </a>
 
 </div>
