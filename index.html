@@ -1600,7 +1600,7 @@ let city=cities[Math.floor(Math.random()*cities.length)];
 
 div.innerHTML="🟢 "+name+" de "+city+" comprou há "+(Math.floor(Math.random()*3)+1)+" minutos";div.style=`
 position:fixed;
-bottom:20px;
+bottom:80px;
 left:20px;
 background:#2d5a27;
 color:#fff;
@@ -1693,7 +1693,7 @@ let box=document.getElementById("purchaseAlert")
 
 if(!box) return
 
-div.innerHTML="🟢 "+name+" de "+city+" comprou há "+(Math.floor(Math.random()*3)+1)+" minutos";
+box.innerHTML="🟢 "+buyer+" acabou de comprar o acesso"
 
 box.style.display="block"
 
