@@ -64,6 +64,26 @@ padding-top:60px;
 
 <body>
 
+
+<!-- HEADER ESTILO NOTÍCIA -->
+
+<div style="background:#ffffff;border-bottom:1px solid #e5e5e5;padding:15px 0;position:sticky;top:0;z-index:999;">
+
+<div style="max-width:900px;margin:auto;display:flex;justify-content:space-between;align-items:center;">
+
+<div style="font-weight:bold;font-size:20px;">
+S.O.S CASA
+</div>
+
+<div style="font-size:14px;color:#666;">
+Atualizado agora • Casa & Limpeza
+</div>
+
+</div>
+
+</div>
+
+
 <!-- BARRA DE PROGRESSO DE LEITURA -->
 
 <div id="progressBar" style="
@@ -1024,6 +1044,102 @@ e encontra a solução em poucos segundos.
 </section>
 
 
+<!-- SEÇÃO ESTILO BLOG -->
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-3xl mx-auto">
+
+<p class="text-sm text-gray-500 mb-6">
+Publicado hoje • 9 minutos de leitura
+</p>
+
+<h2 class="text-4xl font-serif mb-6">
+Como pequenas soluções domésticas podem transformar completamente a rotina de uma casa
+</h2>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Quem cuida de uma casa sabe que os problemas não aparecem todos de uma vez. 
+Eles vão surgindo aos poucos: uma mancha no sofá, um cheiro estranho no colchão, 
+gordura acumulando na cozinha ou um armário com cheiro de mofo.
+</p>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+No começo parece algo pequeno. Mas quando essas situações começam a se repetir, 
+muita gente sente que está sempre lutando contra os mesmos problemas dentro de casa.
+</p>
+
+<p class="text-gray-700 mb-10 leading-relaxed">
+Foi exatamente isso que aconteceu com <strong>Romilda Santos</strong>, uma mulher simples que sempre cuidou da casa da família, 
+mas que vivia enfrentando as mesmas dificuldades de limpeza que milhões de pessoas enfrentam todos os dias.
+</p>
+
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" class="rounded-lg mb-10">
+
+<h3 class="text-2xl font-bold mb-4">
+Os problemas que quase toda casa enfrenta
+</h3>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Depois de conversar com amigas e vizinhas, Romilda percebeu que não estava sozinha. 
+Muitas pessoas enfrentavam exatamente os mesmos problemas:
+</p>
+
+<ul class="list-disc pl-6 text-gray-700 space-y-2 mb-10">
+
+<li>Manchas difíceis no colchão</li>
+<li>Cheiro de mofo em armários</li>
+<li>Gordura acumulada na cozinha</li>
+<li>Sofá com manchas antigas</li>
+<li>Azulejos encardidos no banheiro</li>
+
+</ul>
+
+<p class="text-gray-700 mb-10 leading-relaxed">
+O pior era que muitas soluções encontradas na internet não funcionavam, 
+ou exigiam produtos caros que nem sempre estavam disponíveis em casa.
+</p>
+
+<h3 class="text-2xl font-bold mb-4">
+Foi aí que tudo começou a mudar
+</h3>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Romilda começou a testar algumas soluções simples usando ingredientes que já tinha em casa.
+</p>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Algumas não funcionaram… mas outras deram resultados surpreendentes.
+</p>
+
+<p class="text-gray-700 mb-10 leading-relaxed">
+Com o tempo ela começou a anotar tudo o que funcionava, criando uma pequena lista de soluções práticas para problemas domésticos.
+</p>
+
+<img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f" class="rounded-lg mb-10">
+
+<h3 class="text-2xl font-bold mb-4">
+Hoje essas soluções estão organizadas em um aplicativo simples
+</h3>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Sempre que aparece um problema em casa, basta abrir o aplicativo e procurar a solução.
+</p>
+
+<p class="text-gray-700 mb-6 leading-relaxed">
+Em poucos segundos é possível encontrar um passo a passo simples para resolver situações que antes pareciam impossíveis.
+</p>
+
+<p class="text-gray-700 mb-10 leading-relaxed">
+E foi exatamente isso que transformou a rotina da Romilda — e de muitas outras pessoas que começaram a usar essas soluções.
+</p>
+
+</div>
+
+</section>
+
+
+
 <!-- OFERTA -->
 
 <section id="QUERO O GUIA S.O.S CASA AGORA" class="py-20 px-6">
@@ -1422,7 +1538,53 @@ renderComments()
 
 </script>
 
+<script>
+
+window.addEventListener("scroll", function(){
+
+let scroll = window.scrollY;
+
+if(scroll > 800){
+
+if(!document.getElementById("scrollNotice")){
+
+let div = document.createElement("div");
+
+div.id="scrollNotice";
+
+div.innerHTML="👀 Mais pessoas estão acessando o aplicativo agora";
+
+div.style=`
+position:fixed;
+bottom:20px;
+left:20px;
+background:#2d5a27;
+color:#fff;
+padding:10px 15px;
+border-radius:6px;
+font-size:14px;
+z-index:9999;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+`;
+
+document.body.appendChild(div);
+
+setTimeout(()=>{
+div.remove();
+},6000);
+
+}
+
+}
+
+});
+
+</script>
+
 </body>
 </html>
+
+
+
 
 
