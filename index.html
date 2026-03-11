@@ -64,6 +64,15 @@ padding-top:60px;
 
 <body>
 
+<div id="progressBar" style="
+position:fixed;
+top:0;
+left:0;
+width:0%;
+height:4px;
+background:#f4b400;
+z-index:9999;
+"></div>
 
 <!-- HEADER ESTILO NOTÍCIA -->
 
@@ -162,6 +171,12 @@ SIM, EU QUERO RESOLVER MINHA CASA AGORA
 </div>
 
 </section>
+
+
+<div style="background:#fff3cd;padding:10px;border-radius:6px;margin:20px 0;font-size:14px;">
+👥 <span id="viewers">184</span> pessoas estão lendo este artigo agora
+</div>
+
 
 <div class="bg-yellow-100 border border-yellow-300 p-3 rounded-lg text-center my-6 max-w-md mx-auto">
 👥 <strong><span id="viewers">47</span> pessoas</strong> estão vendo esta página agora
@@ -1581,6 +1596,19 @@ div.remove();
 
 </script>
 
+<script>
+
+window.addEventListener("scroll",function(){
+
+let scrollTop=document.documentElement.scrollTop
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight
+let progress=(scrollTop/height)*100
+
+document.getElementById("progressBar").style.width=progress+"%"
+
+})
+
+</script>
 </body>
 </html>
 
