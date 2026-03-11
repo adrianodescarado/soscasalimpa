@@ -1576,6 +1576,40 @@ renderComments()
 
 renderComments()
 
+<script>
+
+const buyers = [
+"Vanessa - RS",
+"Juliana - SP",
+"Fernanda - PR",
+"Ana - MG",
+"Patrícia - PE",
+"Camila - RJ",
+"Mariana - BA",
+"Carla - SC"
+];
+
+function showPurchase(){
+
+let buyer = buyers[Math.floor(Math.random()*buyers.length)];
+
+let box = document.getElementById("purchaseAlert");
+
+if(!box) return;
+
+box.innerHTML="✅ "+buyer+" acabou de adquirir o acesso.";
+
+box.style.display="block";
+
+setTimeout(()=>{
+box.style.display="none";
+},5000);
+
+}
+
+setInterval(showPurchase,8000);
+
+</script>
 
 </body>
 </html>
