@@ -1661,7 +1661,7 @@ el.innerText=n
 
 <div id="purchaseAlert" style="
 position:fixed;
-bottom:120px;
+bottom:20px;
 left:20px;
 background:#fff;
 border-radius:10px;
@@ -1692,8 +1692,6 @@ let buyer=buyers[Math.floor(Math.random()*buyers.length)]
 let box=document.getElementById("purchaseAlert")
 
 if(!box) return
-
-box.innerHTML="🟢 "+buyer+" acabou de comprar o acesso"
 
 div.innerHTML="🟢 "+name+" de "+city+" comprou há "+(Math.floor(Math.random()*3)+1)+" minutos";
 
