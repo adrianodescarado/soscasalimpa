@@ -1671,13 +1671,14 @@ z-index:9999;
 <script>
 
 const buyers=[
-"Maria - Curitiba",
-"Juliana - São Paulo",
-"Patrícia - Recife",
-"Ana - Belo Horizonte",
-"Camila - Porto Alegre",
-"Fernanda - Salvador",
-"Carla - Campinas"
+"Juliana de São Paulo",
+"Maria de Curitiba",
+"Fernanda de Salvador",
+"Ana de Belo Horizonte",
+"Patrícia de Recife",
+"Camila de Porto Alegre",
+"Carla de Campinas",
+"Daniela do Rio de Janeiro"
 ]
 
 setInterval(()=>{
@@ -1686,7 +1687,9 @@ let buyer=buyers[Math.floor(Math.random()*buyers.length)]
 
 let box=document.getElementById("purchaseAlert")
 
-box.innerHTML="🟢 "+buyer+" acabou de acessar o aplicativo"
+if(!box) return
+
+box.innerHTML="🟢 "+buyer+" acabou de comprar o acesso"
 
 box.style.display="block"
 
@@ -1696,11 +1699,9 @@ box.style.display="none"
 
 },4000)
 
-},9000)
+},8000)
 
 </script>
-
-
 
 
 
