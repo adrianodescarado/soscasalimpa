@@ -1,32 +1,1376 @@
-<div style="
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#2d5a27;
-color:#fff;
-padding:12px;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:15px;
-font-size:14px;
-z-index:9999;
-">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<span>💰 Cupom de R$10 de desconto — código: <strong>LIMPAR</strong></span>
+<head>
 
-<a href="#comprar" style="
-background:#f4b400;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOS Casa</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+:root{
+--primary-green:#2d5a27;
+--accent-yellow:#f4b400;
+--bg-cream:#f9f7f2;
+}
+
+
+.btn-cta{
+background:var(--accent-yellow);
 color:#000;
-padding:8px 14px;
-border-radius:6px;
 font-weight:bold;
-text-decoration:none;
-">
-Usar desconto
+border-radius:8px;
+transition:.3s;
+}
+
+.btn-cta:hover{
+transform:scale(1.05);
+background:#e0a300;
+}
+
+.logo-round{
+background:#fff;
+padding:10px;
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+width:80px;
+height:80px;
+object-fit:contain;
+}
+
+@keyframes pulseCTA{
+0%{transform:scale(1);}
+50%{transform:scale(1.07);}
+100%{transform:scale(1);}
+}
+
+.btn-cta{
+animation:pulseCTA 1.8s infinite;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg-cream);
+padding-top:60px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- BARRA DE URGÊNCIA -->
+
+<div id="urgencyBar"
+style="position:fixed;top:0;left:0;width:100%;background:#ff3b30;color:white;text-align:center;padding:10px;font-weight:bold;z-index:9999;">
+
+🔥 <span id="buyersCount">1.247</span> pessoas baixaram o guia este mês • Restam <span id="spots">23</span> acessos promocionais
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="bg-stone-900 shadow-sm">
+
+<div class="max-w-6xl mx-auto flex justify-center py-6">
+
+<div class="bg-white rounded-full p-4 inline-block">
+
+<img src="images/logo.png" class="logo-round">
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="bg-stone-900 text-white py-7 px-6">
+
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+
+<div class="md:w-1/2">
+
+<h1 class="text-5xl font-extrabold mb-6">
+<span class="text-yellow-300">ATENÇÃO:</span> Cansada de se sentir sobrecarregada com os problemas da sua casa?
+</h1>
+<p class="text-xl text-gray-300 mb-6">
+
+Xixi no colchão, cheiro de mofo, sujeira que parece impossível… pequenos problemas que roubam sua paz todos os dias.
+
+</p>
+
+<p class="text-lg mb-10">
+
+Existe um jeito simples de resolver 100 problemas domésticos em minutos usando apenas coisas que você já tem em casa.
+
+</p>
+
+<a href="#comprar" class="btn-cta px-10 py-4 text-xl inline-block">
+
+SIM, EU QUERO RESOLVER MINHA CASA AGORA
+
 </a>
 
 </div>
+
+<div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+    <img src="./images/romilda10.jpg" 
+         alt="Romilda segurando o guia SOS Casa"
+         class="rounded-lg shadow-2xl w-[400px]">
+</div>
+
+</section>
+
+<div class="bg-yellow-100 border border-yellow-300 p-3 rounded-lg text-center my-6 max-w-md mx-auto">
+👥 <strong><span id="viewers">47</span> pessoas</strong> estão vendo esta página agora
+</div>
+
+<!-- HISTÓRIA ROMILDA -->
+
+<section class="py-20 px-6 bg-[#f6f2ea]">
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+<!-- TEXTO -->
+
+<div>
+
+<p class="uppercase tracking-widest text-sm text-gray-500 mb-2">
+A HISTÓRIA DE ROMILDA
+</p>
+
+<h2 class="text-5xl font-serif mb-6">
+Acordando para o caos
+</h2>
+
+<p class="mb-4">
+<strong>Romilda Santos, 52 anos</strong>, acorda antes do sol. Dois netos pequenos ainda dormem na cama. Ela se aproxima e percebe... o colchão está molhado mais uma vez.
+</p>
+
+<p class="mb-4">
+Ela suspira. Entre roupas espalhadas, brinquedos e pratos sujos, ela sabe que vai começar outro dia de corrida.
+</p>
+
+<p class="mb-6">
+O trabalho com vendas da Avon e Natura não espera. Clientes, entregas, pedidos... e a casa exigindo atenção.
+</p>
+
+<div class="border-l-4 border-orange-400 pl-4 italic text-gray-700 mb-8">
+“Às vezes eu chorava sozinha, sem saber como dar conta de tudo.”
+<br>
+<span class="text-sm not-italic text-gray-500">-- Romilda Santos</span>
+</div>
+
+</div>
+
+<!-- IMAGEM -->
+
+<div class="flex justify-center">
+
+<div class="bg-white p-6 rounded-2xl shadow-lg">
+
+<img src="images/romilda.jpg" alt="Romilda segurando o guia SOS Casa" class="rounded-xl">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROBLEMAS -->
+
+<div class="max-w-6xl mx-auto mt-16">
+
+<h3 class="text-3xl font-serif mb-8">
+Cada pequeno problema parecia uma crise
+</h3>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-white p-5 rounded-xl shadow-sm flex items-center gap-4">
+<span class="text-red-500 text-xl">🔥</span>
+<p>O xixi no colchão que deixava cheiro mesmo depois de lavar</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm flex items-center gap-4">
+<span class="text-red-500 text-xl">💨</span>
+<p>O ventilador cheio de poeira que ninguém sabia limpar direito</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm flex items-center gap-4">
+<span class="text-red-500 text-xl">🍽️</span>
+<p>O banheiro engordurado depois do café da manhã dos netos</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm flex items-center gap-4">
+<span class="text-red-500 text-xl">🔥</span>
+<p>A cozinha acumulando gordura difícil de remover</p>
+</div>
+
+</div>
+
+<p class="mt-8 text-gray-700">
+Romilda se sentia exausta, sem tempo, sem orientação. Não adiantava pesquisar, nem tentar métodos complicados.
+<strong>Ela precisava de algo simples e direto.</strong>
+</p>
+
+<div class="border-l-4 border-orange-400 pl-4 italic text-gray-700 mt-6">
+“Eu não tinha tempo para estudar, nem paciência para ficar tentando métodos que não davam certo.”
+<br>
+<span class="text-sm not-italic text-gray-500">-- Romilda Santos</span>
+</div>
+
+</div>
+
+</section>
+
+
+
+<p style="text-align:center;color:#666;margin-bottom:10px;">
+Mais de <strong>3.000 casas</strong> já usaram o método S.O.S Casa
+</p>
+
+<!-- DEPOIMENTOS -->
+
+<section style="max-width:900px;margin:60px auto;padding:20px;">
+
+<h2 style="text-align:center;font-size:28px;font-weight:bold;margin-bottom:30px;">
+Veja o que outras pessoas estão dizendo
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+
+<!-- depoimento 1 -->
+
+<div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+
+<div style="display:flex;align-items:center;margin-bottom:10px;gap:10px;">
+
+<img src="https://randomuser.me/api/portraits/women/65.jpg" width="50" style="border-radius:50%;">
+
+<div>
+<strong>Carla Mendes</strong><br>
+<span style="font-size:12px;color:#666;">Campinas - SP</span>
+</div>
+
+</div>
+
+<div style="color:#f4b400;font-size:18px;">★★★★★</div>
+
+<p style="margin-top:10px;">
+Eu não acreditava muito, mas resolvi testar. Consegui tirar manchas antigas do sofá que estavam há anos. Fiquei impressionada.
+</p>
+
+</div>
+
+<!-- depoimento 2 -->
+
+<div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+
+<div style="display:flex;align-items:center;margin-bottom:10px;gap:10px;">
+
+<img src="https://randomuser.me/api/portraits/women/42.jpg" width="50" style="border-radius:50%;">
+
+<div>
+<strong>Juliana Rocha</strong><br>
+<span style="font-size:12px;color:#666;">Curitiba - PR</span>
+</div>
+
+</div>
+
+<div style="color:#f4b400;font-size:18px;">★★★★★</div>
+
+<p style="margin-top:10px;">
+Aqui em casa sempre sofremos com gordura na cozinha. Segui as dicas e deu muito certo. Simples e prático.
+</p>
+
+</div>
+
+<!-- depoimento 3 -->
+
+<div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.1);">
+
+<div style="display:flex;align-items:center;margin-bottom:10px;gap:10px;">
+
+<img src="https://randomuser.me/api/portraits/women/33.jpg" width="50" style="border-radius:50%;">
+
+<div>
+<strong>Patrícia Alves</strong><br>
+<span style="font-size:12px;color:#666;">Belo Horizonte - MG</span>
+</div>
+
+</div>
+
+<div style="color:#f4b400;font-size:18px;">★★★★★</div>
+
+<p style="margin-top:10px;">
+O guia é bem direto. Gostei porque explica passo a passo. Já usei em várias partes da casa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALERIA VIDA REAL -->
+
+<section class="py-20 px-6 bg-white">
+
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-4xl font-serif text-center mb-12">
+Como isso acontece na vida real
+</h2>
+
+<p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+Problemas simples da casa que parecem pequenos, mas se acumulam todos os dias.  
+Foi exatamente isso que levou Romilda a procurar uma solução.
+</p>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<!-- imagem 1 -->
+
+<div class="overflow-hidden rounded-xl shadow-lg">
+<img src="images/limpando-tapete.jpg"
+class="w-full h-[280px] object-cover hover:scale-105 transition duration-500">
+</div>
+
+<!-- imagem 2 -->
+
+<div class="overflow-hidden rounded-xl shadow-lg">
+<img src="images/produtos-caseiros.jpg"
+class="w-full h-[280px] object-cover hover:scale-105 transition duration-500">
+</div>
+
+<!-- imagem 3 -->
+
+<div class="overflow-hidden rounded-xl shadow-lg">
+<img src="images/lavando-quintal.jpg"
+class="w-full h-[280px] object-cover hover:scale-105 transition duration-500">
+</div>
+
+<!-- imagem 4 -->
+
+<div class="overflow-hidden rounded-xl shadow-lg">
+<img src="images/passando-roupa.jpg"
+class="w-full h-[280px] object-cover hover:scale-105 transition duration-500">
+</div>
+
+<!-- imagem 5 -->
+
+<div class="overflow-hidden rounded-xl shadow-lg">
+<img src="images/limpeza-banheiro.jpg"
+class="w-full h-[280px] object-cover hover:scale-105 transition duration-500">
+</div>
+
+<!-- texto central -->
+
+<div class="bg-[#f6f2ea] rounded-xl p-8 flex items-center text-center shadow-lg">
+
+<p class="text-lg text-gray-700">
+Pequenos problemas domésticos acontecem todos os dias.  
+Mas quando você tem um método simples,  
+<strong>eles deixam de ser um peso na sua rotina.</strong>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- A VIRADA -->
+
+<section class="py-20 px-6 bg-[#00CEC8]">
+
+<div class="max-w-4xl mx-auto">
+
+<p class="uppercase tracking-widest text-sm text-green-700 mb-3 flex items-center gap-2">
+<span class="text-xl">✨</span> A VIRADA
+</p>
+
+<h2 class="text-5xl font-serif mb-8 text-gray-900">
+Descobrindo a solução
+</h2>
+
+<p class="text-lg text-gray-700 mb-6">
+Um dia, quase sem esperança, Romilda encontrou o nosso método 
+<span class="text-red-600 font-semibold">S.O.S CASA</span>.
+</p>
+
+<p class="text-lg text-gray-700 mb-6">
+Ela pensou: "Será que vai ser fácil de entender? Será que vou conseguir aplicar sem perder tempo?"
+</p>
+
+<p class="text-lg text-gray-800 mb-10">
+E foi exatamente isso que aconteceu. 
+<strong>O método era pronto, direto ao ponto, com passo a passo simples, sem complicações ou termos difíceis.</strong>
+</p>
+
+<div class="border-l-4 border-green-700 pl-5 italic text-gray-700">
+"Pela primeira vez, senti que alguém pensou em mim -- uma pessoa sem tempo, sem paciência, sem experiência online -- e me deu exatamente o que eu precisava."
+<br><br>
+<span class="text-sm not-italic text-gray-500">-- Romilda Santos</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="py-24 px-6 bg-[#f6f2ea]">
+
+<div class="max-w-5xl mx-auto">
+
+<!-- BLOCO CAPA + TEXTO -->
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+
+<div class="flex justify-center">
+
+<img src="images/capa-ebook.png"
+class="rounded-xl shadow-xl w-[260px]">
+
+</div>
+
+<div>
+
+<p class="uppercase text-xs tracking-widest text-green-700 mb-2">
+Transformação completa
+</p>
+
+<h2 class="text-3xl font-serif text-gray-900 mb-4">
+Hoje, Romilda acorda tranquila
+</h2>
+
+<p class="text-gray-700 mb-4 leading-relaxed">
+Os netos ainda fazem bagunça, mas ela sabe exatamente o que fazer. 
+O colchão limpa rápido, o mofo some, a cozinha fica brilhando sem esforço.
+</p>
+
+<p class="text-gray-700 mb-4 leading-relaxed">
+O <strong>S.O.S CASA</strong> mudou sua rotina. 
+Parecia impossível antes… mas agora cada problema tem uma solução simples.
+</p>
+
+<p class="italic text-gray-600">
+“Hoje eu não fico mais perdida. Eu olho o problema, abro o guia e resolvo.”
+</p>
+
+</div>
+
+</div>
+
+<!-- FRASE CENTRAL -->
+
+<p class="text-center text-gray-700 mt-16 mb-10 text-lg">
+Depois de aplicar o <strong>S.O.S CASA</strong>, você vai sentir:
+</p>
+
+<!-- BENEFÍCIOS -->
+
+<div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto text-sm">
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Tranquilidade e controle sobre sua casa</p>
+</div>
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Economia de tempo e dinheiro</p>
+</div>
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Rotina organizada sem correria</p>
+</div>
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Menos estresse e frustração</p>
+</div>
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Mais tempo para você e sua família</p>
+</div>
+
+<div class="bg-white border rounded-lg p-4 flex gap-3 items-center shadow-sm">
+<span class="text-green-600 text-lg">✔</span>
+<p>Casa limpa sem esforço exagerado</p>
+</div>
+
+</div>
+
+<p class="text-center text-green-700 mt-8 text-sm">
+Não é só limpeza. É paz e liberdade na sua rotina diária.
+</p>
+
+<!-- MOCKUP PRODUTO -->
+
+<div class="flex justify-center mt-16">
+
+<img src="images/mockup-sos-casa.png"
+class="w-[520px]">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LISTA 30 SOLUÇÕES -->
+
+<!-- LISTA 30 SOLUÇÕES -->
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-4xl font-bold text-center mb-2">
+Aplicando o método: veja <span class="text-red-600">30 dos 100 problemas</span> resolvidos
+</h2>
+
+<p class="text-center text-gray-500 mb-12 text-sm">
+Amostra do que você recebe. São 100 soluções no total!
+</p>
+
+<div class="grid md:grid-cols-3 gap-5 text-[15px]">
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Xixi no colchão?</strong> Resolvido em minutos com coisas que ela já tinha em casa.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Cheiro de mofo na geladeira?</strong> Eliminado sem produtos caros.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Ventilador sujo?</strong> Limpo sem desmontar nada.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Gordura pesada na cozinha?</strong> Removida rapidamente, sem esforço.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Ralo entupido?</strong> Desentupido sem chamar encanador.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Mancha de café no tecido?</strong> Removida sem danificar o pano.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Azulejo encardido?</strong> Limpo com mistura caseira simples.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Panela queimada?</strong> Restaurada sem raspar e sem esforço.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Cheiro ruim na lixeira?</strong> Eliminado com ingrediente de cozinha.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Ferrugem em utensílio?</strong> Removida com produto natural.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Vidro manchado de gordura?</strong> Brilhando com receita caseira.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Piso encardido?</strong> Limpo sem precisar ficar de joelhos.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Roupa amarelada?</strong> Branqueada sem cloro e sem química pesada.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Cortina mofada?</strong> Limpa sem precisar desmontar.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Sofá com mancha?</strong> Limpo sem chamar profissional.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Cheiro de cigarro nos móveis?</strong> Eliminado com truque simples.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Geladeira com mau cheiro?</strong> Resolvido em 5 minutos.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Rejunte escuro?</strong> Clareado com ingrediente de padaria.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Tapete com odor forte?</strong> Desodorizado sem lavar.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Ferrugem na roupa?</strong> Removida sem danificar o tecido.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Pia de inox sem brilho?</strong> Brilhando como nova.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Parede com marcas de gordura?</strong> Limpa sem precisar pintar.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Box do banheiro embaçado?</strong> Transparente com receita caseira.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Colchão com ácaro?</strong> Higienizado com mistura simples.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Micro-ondas com crosta?</strong> Limpo sem esfregar nada.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Vaso sanitário com mancha?</strong> Limpo com ingrediente de cozinha.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Guarda-roupa com cheiro de mofo?</strong> Resolvido definitivamente.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Tênis branco encardido?</strong> Limpo sem máquina de lavar.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Lençol com manchas antigas?</strong> Restaurado com mistura caseira.</p></div>
+
+<div class="bg-gray-100 rounded-xl p-4 flex items-start shadow-sm"><span class="text-green-600 text-xl mr-3">✔</span><p><strong>Torneira com marca d'água?</strong> Brilhando como nova em segundos.</p></div>
+
+</div>
+
+<p class="text-center text-gray-600 mt-12">
+Cada solução é passo a passo, direto ao ponto, sem precisar estudar, pesquisar ou adivinhar.
+</p>
+
+<p class="text-center italic text-gray-500 mt-4">
+“Era tão simples que eu não precisava nem pensar. Eu apenas seguia os passos e funcionava.”
+<br>
+<span class="text-sm">— Romilda Santos, emocionada</span>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- BENEFÍCIOS -->
+
+<section class="py-20 px-6 bg-[#f6f2ea]">
+
+<div class="max-w-5xl mx-auto text-center">
+
+<h2 class="text-3xl font-serif mb-12 text-gray-900">
+Depois de aplicar o <strong>S.O.S CASA</strong>, você vai sentir:
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6 text-left">
+
+<!-- BENEFÍCIO 1 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">❤</div>
+<p>
+<strong>Tranquilidade dentro da sua casa</strong><br>
+Nada de olhar para a bagunça e sentir desespero. Você vai saber exatamente o que fazer em cada situação.
+</p>
+</div>
+
+<!-- BENEFÍCIO 2 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">💰</div>
+<p>
+<strong>Economia real de dinheiro</strong><br>
+Pare de gastar com produtos caros ou soluções que não funcionam. Use coisas simples que você já tem em casa.
+</p>
+</div>
+
+<!-- BENEFÍCIO 3 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">⏰</div>
+<p>
+<strong>Rotina organizada mesmo com crianças ou trabalho</strong><br>
+Métodos rápidos que resolvem problemas em minutos, sem perder horas limpando.
+</p>
+</div>
+
+<!-- BENEFÍCIO 4 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">⚡</div>
+<p>
+<strong>Mais energia e menos frustração</strong><br>
+Sem aquela sensação de que a casa está sempre fora de controle.
+</p>
+</div>
+
+<!-- BENEFÍCIO 5 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">👨‍👩‍👧</div>
+<p>
+<strong>Mais tempo para você e sua família</strong><br>
+Menos tempo resolvendo problemas da casa e mais tempo vivendo momentos bons.
+</p>
+</div>
+
+<!-- BENEFÍCIO 6 -->
+
+<div class="bg-white border rounded-xl p-5 shadow-sm flex items-start gap-4">
+<div class="bg-green-100 text-green-700 rounded-lg p-3 text-xl">✨</div>
+<p>
+<strong>Casa limpa e organizada sem sofrimento</strong><br>
+Soluções práticas que qualquer pessoa consegue aplicar, mesmo sem experiência.
+</p>
+</div>
+
+</div>
+
+<p class="text-green-700 text-lg font-semibold mt-12">
+Não é só limpeza. É paz, controle e liberdade na sua rotina diária.
+</p>
+
+
+<!-- IMAGEM DE IMPACTO -->
+
+<div class="flex justify-center mt-16">
+
+<img src="images/impacto-sos-casa.png"
+class="w-[520px]">
+
+</div>
+
+</section>
+
+
+<section class="py-24 px-6 bg-[#f9f7f2]">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<h2 class="text-4xl md:text-5xl font-serif mb-12 leading-tight">
+Imagine chegar em casa e 
+<span class="text-green-700 font-semibold">
+não sentir medo do que vai encontrar
+</span>
+</h2>
+
+<div class="space-y-4 max-w-xl mx-auto">
+
+<div class="bg-white shadow-md rounded-xl p-5 flex items-center gap-4">
+<span class="text-red-500 text-xl">✖</span>
+<p>Nada de xixi no colchão que demora horas para limpar</p>
+</div>
+
+<div class="bg-white shadow-md rounded-xl p-5 flex items-center gap-4">
+<span class="text-red-500 text-xl">✖</span>
+<p>Nada de cheiro de mofo insistente</p>
+</div>
+
+<div class="bg-white shadow-md rounded-xl p-5 flex items-center gap-4">
+<span class="text-red-500 text-xl">✖</span>
+<p>Nada de sujeira que exige horas de esforço</p>
+</div>
+
+</div>
+
+<p class="mt-10 text-lg text-gray-700">
+Você aplica o <strong>passo a passo</strong> e 
+<strong>tudo se resolve em minutos.</strong>
+</p>
+
+<div class="border-l-4 border-orange-400 pl-4 italic text-gray-700 mt-6 max-w-lg mx-auto text-left">
+“Eu me senti livre de uma carga que nem sabia que carregava.”
+<br>
+<span class="text-sm not-italic text-gray-500">-- Romilda Santos</span>
+</div>
+
+<a href="#comprar" class="btn-cta px-10 py-5 text-xl mt-10 inline-block">
+EU QUERO MINHA CASA ORGANIZADA
+</a>
+
+</div>
+
+</section>
+
+
+<section class="py-24 px-6 bg-[#f9f7f2]">
+
+<div class="max-w-6xl mx-auto text-center">
+
+<p class="uppercase text-sm tracking-widest text-green-700 mb-3">
+O QUE VOCÊ RECEBE
+</p>
+
+<h2 class="text-4xl md:text-5xl font-serif mb-14 text-gray-900">
+Tudo que você precisa para transformar sua casa
+</h2>
+
+<div class="grid md:grid-cols-4 gap-6 text-left">
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">100 soluções domésticas</h3>
+<p class="text-gray-600 text-sm">
+Problemas comuns resolvidos com passo a passo simples que qualquer pessoa consegue aplicar.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Eliminar odores difíceis</h3>
+<p class="text-gray-600 text-sm">
+Aprenda como remover cheiro de mofo, xixi, gordura e outros odores persistentes da sua casa.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Métodos para manchas</h3>
+<p class="text-gray-600 text-sm">
+Técnicas caseiras para eliminar manchas de colchão, sofá, roupa e azulejos.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Limpeza rápida</h3>
+<p class="text-gray-600 text-sm">
+Métodos pensados para quem trabalha e precisa resolver tudo em poucos minutos.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Checklist semanal</h3>
+<p class="text-gray-600 text-sm">
+Uma lista prática para manter sua casa sempre organizada sem esforço.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Cronograma 15 min por dia</h3>
+<p class="text-gray-600 text-sm">
+Organize sua rotina de limpeza gastando apenas alguns minutos por dia.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Misturas caseiras poderosas</h3>
+<p class="text-gray-600 text-sm">
+Receitas simples com ingredientes baratos que substituem produtos caros.
+</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow-md">
+<h3 class="font-semibold text-lg mb-2">Método Plug & Play</h3>
+<p class="text-gray-600 text-sm">
+Abra o guia, siga o passo a passo e resolva o problema imediatamente.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="py-24 px-6 bg-[#f6f2ea]">
+
+<div class="max-w-4xl mx-auto">
+
+<h2 class="text-4xl font-serif text-center mb-12">
+Talvez você esteja pensando...
+</h2>
+
+<div class="bg-green-50 border border-green-600 rounded-xl p-6 mb-6">
+
+<p class="font-semibold mb-2">
+"Será que é para mim? Será que eu consigo aplicar?"
+</p>
+
+<p class="text-gray-700">
+A resposta é <strong>SIM.</strong>  
+O <strong>S.O.S CASA</strong> foi criado para pessoas comuns.
+
+Não importa se você é dona de casa, trabalha fora ou cuida da família o dia todo.
+
+Se você consegue seguir uma receita simples, consegue aplicar o método.
+</p>
+
+</div>
+
+<div class="space-y-4">
+
+<div class="bg-white p-5 rounded-xl shadow-sm">
+<h4 class="font-semibold mb-1">E se não funcionar?</h4>
+<p class="text-gray-600 text-sm">
+Você tem <strong>7 dias de garantia incondicional.</strong>  
+Se não gostar, devolvemos 100% do seu dinheiro.
+</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm">
+<h4 class="font-semibold mb-1">Preciso comprar produtos caros?</h4>
+<p class="text-gray-600 text-sm">
+Não. A maioria das soluções usa ingredientes simples que você já tem em casa.
+</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm">
+<h4 class="font-semibold mb-1">É difícil aplicar?</h4>
+<p class="text-gray-600 text-sm">
+Não. Cada solução tem poucos passos simples e rápidos.
+</p>
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow-sm">
+<h4 class="font-semibold mb-1">Como recebo?</h4>
+<p class="text-gray-600 text-sm">
+Após o pagamento você recebe acesso imediato para baixar no celular ou computador.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="py-24 px-6 bg-[#f9f7f2]">
+
+<div class="max-w-3xl mx-auto">
+
+<h2 class="text-4xl font-serif text-center mb-12">
+Perguntas Frequentes
+</h2>
+
+<div class="space-y-4">
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">O que é o S.O.S CASA?</summary>
+<p class="mt-3 text-gray-600">
+Um guia prático com 100 soluções simples para resolver problemas domésticos rapidamente.
+</p>
+</details>
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">Preciso saber usar internet?</summary>
+<p class="mt-3 text-gray-600">
+Não. Basta abrir o guia e seguir os passos.
+</p>
+</details>
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">Funciona para qualquer casa?</summary>
+<p class="mt-3 text-gray-600">
+Sim. As soluções são universais e funcionam em qualquer ambiente doméstico.
+</p>
+</details>
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">Preciso comprar produtos caros?</summary>
+<p class="mt-3 text-gray-600">
+Não. A maioria usa ingredientes comuns como vinagre e bicarbonato.
+</p>
+</details>
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">Quanto tempo demora?</summary>
+<p class="mt-3 text-gray-600">
+Algumas soluções resolvem o problema em poucos minutos.
+</p>
+</details>
+
+<details class="bg-white p-5 rounded-xl shadow cursor-pointer">
+<summary class="font-semibold">Tem garantia?</summary>
+<p class="mt-3 text-gray-600">
+Sim. Garantia incondicional de 7 dias.
+</p>
+</details>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- OFERTA -->
+
+<section id="QUERO O GUIA S.O.S CASA AGORA" class="py-20 px-6">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<div class="bg-green-700 text-white rounded-2xl p-12 shadow-2xl">
+
+<div style="text-align:center;">
+<img src="images/logo.png" style="display:block; margin:auto; width:150px;">
+</div>
+
+<h2 class="text-5xl font-black mb-6">
+
+R$ 27,00
+
+</h2>
+
+<p class="text-xl mb-12">
+
+Acesso imediato após pagamento
+
+</p>
+
+<p class="text-red-200 text-sm mt-2">
+⚠️ Oferta promocional disponível hoje
+</p>
+
+
+<p class="text-red-200 text-sm mt-2">
+⚠️ Mais de 1.200 pessoas já baixaram o guia este mês
+</p>
+
+<p class="text-sm mt-4 text-green-100">
+🛡️ Garantia incondicional de 7 dias
+</p>
+
+<p class="text-sm mt-4 text-green-100">
+✅ 100 soluções domésticas
+</p>
+
+<p class="text-xs text-green-200">
+Se não gostar, devolvemos 100% do seu dinheiro.
+</p>
+
+<ul class="text-left inline-block mb-10 space-y-2">
+
+</ul>
+
+<br>
+
+<a href="#" class="btn-cta px-12 py-5 text-2xl inline-block">
+
+COMPRAR AGORA
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- COMENTÁRIOS FACEBOOK -->
+
+<section class="bg-[#0c2b4b] text-white py-24 px-6 text-center">
+
+<div class="max-w-3xl mx-auto">
+
+<!-- LOGO -->
+
+<div class="flex justify-center mb-8">
+
+<div class="bg-white rounded-full p-6">
+<img src="images/logo.png" class="h-20">
+</div>
+
+</div>
+
+
+<!-- HEADLINE -->
+
+<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+Não viva mais dias sobrecarregada
+</h2>
+
+<!-- TEXTO -->
+
+<p class="text-gray-300 text-lg mb-2">
+Não gaste horas tentando adivinhar o que fazer.
+</p>
+
+<p class="text-gray-300 text-lg mb-6">
+Não compre produtos caros que não funcionam.
+</p>
+
+<p class="text-lg mb-2">
+Clique agora e tenha as soluções certas na hora certa, assim como
+<strong class="text-yellow-400">Romilda Santos</strong>.
+</p>
+
+<p class="text-gray-400 mb-10">
+Transforme sua rotina. Transforme sua casa. Transforme sua vida.
+</p>
+
+<!-- BOTÃO -->
+
+<a href="#comprar" class="inline-block bg-[#f4a000] hover:bg-[#e39200] text-black font-bold px-10 py-5 rounded-xl text-lg transition">
+
+SIM, EU QUERO RESOLVER MINHA CASA AGORA!
+
+</a>
+
+<!-- RODAPÉ -->
+
+<p class="text-gray-400 py-10 text-center">
+S.O.S CASA — © 2026 SOS Casa - Todos os direitos reservados.
+</p>
+</div>
+
+</section>
+
+
+
+<section class="bg-white py-20 px-6">
+
+<div class="max-w-4xl mx-auto">
+
+<div style="background:#1877f2;color:white;padding:10px 15px;border-radius:6px 6px 0 0;font-weight:bold;">
+💬 87 Comentários
+</div>
+
+<div style="border:1px solid #ddd;padding:20px;border-top:none;">
+
+<div id="comments-container"></div>
+
+<button id="loadMoreBtn"
+style="margin-top:15px;background:none;border:none;color:#1877f2;cursor:pointer;font-weight:bold;">
+Ver mais comentários
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* CONTADOR DE PESSOAS NA PÁGINA */
+
+setInterval(()=>{
+
+let el=document.getElementById("viewers")
+
+if(!el) return
+
+let num=parseInt(el.innerText)
+
+let change=Math.floor(Math.random()*6)-2
+
+num=num+change
+
+if(num<38) num=38
+if(num>83) num=83
+
+el.innerText=num
+
+},4000)
+
+
+
+/* CONTADOR DE VAGAS */
+
+setInterval(()=>{
+
+let el=document.getElementById("spots")
+
+let num=parseInt(el.innerText)
+
+if(num>7){
+num--
+}
+
+el.innerText=num
+
+},25000)
+
+
+
+/* POPUP DE COMPRA */
+
+const buyers=[
+
+"Mariana - SP",
+"Juliana - RJ",
+"Patrícia - MG",
+"Carla - PR",
+"Fernanda - SC",
+"Renata - BA",
+"Aline - GO",
+"Vanessa - RS",
+"Luciana - DF",
+"Roberta - PE"
+
+]
+
+const popup=document.createElement("div")
+
+popup.style.position="fixed"
+popup.style.bottom="20px"
+popup.style.left="20px"
+popup.style.background="white"
+popup.style.padding="12px 16px"
+popup.style.borderRadius="12px"
+popup.style.boxShadow="0 4px 12px rgba(0,0,0,0.2)"
+popup.style.fontSize="14px"
+popup.style.display="none"
+popup.style.zIndex="9999"
+
+document.body.appendChild(popup)
+
+setInterval(()=>{
+
+let name=buyers[Math.floor(Math.random()*buyers.length)]
+
+popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o acesso."
+
+popup.style.display="block"
+
+setTimeout(()=>{
+popup.style.display="none"
+},4000)
+
+},15000)
+
+
+
+/* COMENTÁRIOS FACEBOOK */
+
+const commentsData=[
+
+{
+name:"Mariana Souza",
+avatar:"https://randomuser.me/api/portraits/women/55.jpg",
+text:"Eu estava lendo tudo antes de comprar. Tenho dois netos pequenos e isso do colchão molhado acontece direto aqui em casa.",
+time:"12 min",
+likes:18,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Sim 😊 Temos uma solução específica para esse problema no guia.",
+time:"10 min"
+}
+]
+},
+
+{
+name:"Roberta Lima",
+avatar:"https://randomuser.me/api/portraits/women/31.jpg",
+text:"Alguém já conseguiu tirar cheiro de mofo do guarda roupa com isso?",
+time:"25 min",
+likes:34,
+replies:[
+{
+name:"Patricia Costa",
+avatar:"https://randomuser.me/api/portraits/women/42.jpg",
+text:"Eu consegui sim. Usei a dica que tem no guia e resolveu em dois dias.",
+time:"20 min"
+}
+]
+},
+
+{
+name:"Juliana Costa",
+avatar:"https://randomuser.me/api/portraits/women/48.jpg",
+text:"Eu sempre pesquiso bastante antes de comprar algo online. Parece bem interessante.",
+time:"27 min",
+likes:22,
+replies:[]
+}
+
+]
+
+
+/* GERAR MAIS COMENTÁRIOS */
+
+const names=[
+"Aline","Fernanda","Luciana","Tatiane","Paula","Gabriela","Renata","Bianca","Flavia","Claudia","Vanessa","Patricia"
+]
+
+const texts=[
+
+"Estou lendo os comentários antes de decidir.",
+"Parece muito prático para quem trabalha fora.",
+"Alguém testou para manchas de sofá?",
+"Minha casa vive com cheiro de mofo no inverno.",
+"Se resolver o problema da gordura na cozinha já ajuda muito.",
+"Vi no Instagram e vim pesquisar melhor.",
+"Minha rotina é corrida então preciso de coisas rápidas.",
+"Gostei da proposta de usar coisas que já temos em casa."
+
+]
+
+for(let i=0;i<80;i++){
+
+commentsData.push({
+
+name:names[Math.floor(Math.random()*names.length)]+" "+["Silva","Souza","Costa","Oliveira"][Math.floor(Math.random()*4)],
+
+avatar:"https://randomuser.me/api/portraits/women/"+Math.floor(Math.random()*90)+".jpg",
+
+text:texts[Math.floor(Math.random()*texts.length)],
+
+time:Math.floor(Math.random()*59)+" min",
+
+likes:Math.floor(Math.random()*40),
+
+replies:[]
+
+})
+
+}
+
+
+
+let visibleComments=5
+
+function renderComments(){
+
+const container=document.getElementById("comments-container")
+
+if(!container) return
+
+container.innerHTML=""
+
+commentsData.slice(0,visibleComments).forEach(c=>{
+
+let repliesHTML=""
+
+c.replies.forEach(r=>{
+
+repliesHTML+=`
+
+<div style="margin-left:50px;margin-top:8px;">
+<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top">
+
+<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:18px;max-width:80%;">
+<strong>${r.name}</strong>
+<div>${r.text}</div>
+</div>
+</div>
+
+`
+
+})
+
+container.innerHTML+=`
+
+<div style="margin-bottom:15px;">
+
+<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
+
+<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
+
+<strong>${c.name}</strong>
+
+<div>${c.text}</div>
+
+</div>
+
+<div style="font-size:12px;color:#65676b;margin-left:45px;">
+Curtir · Responder · ${c.time} · ❤️ ${c.likes}
+</div>
+
+${repliesHTML}
+
+</div>
+
+`
+
+})
+
+}
+
+document.getElementById("loadMoreBtn").onclick=function(){
+
+visibleComments+=5
+renderComments()
+
+}
+
+renderComments()
+
+</script>
+
+</body>
+</html>
+
 
 
