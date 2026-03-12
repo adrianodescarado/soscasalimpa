@@ -1446,8 +1446,6 @@ setInterval(showPurchase,7000);
 
 </script>
 
-
-
 /* COMENTÁRIOS FACEBOOK */
 
 const commentsData=[
@@ -2941,15 +2939,11 @@ el.innerText=num
 
 
 
-<script>
-
 /* CONTADOR DE VAGAS */
 
 setInterval(()=>{
 
 let el=document.getElementById("spots")
-
-if(!el) return
 
 let num=parseInt(el.innerText)
 
@@ -2966,6 +2960,7 @@ el.innerText=num
 /* POPUP DE COMPRA */
 
 const buyers=[
+
 "Mariana - SP",
 "Juliana - RJ",
 "Patrícia - MG",
@@ -2976,6 +2971,7 @@ const buyers=[
 "Vanessa - RS",
 "Luciana - DF",
 "Roberta - PE"
+
 ]
 
 const popup=document.createElement("div")
@@ -2993,11 +2989,11 @@ popup.style.zIndex="9999"
 
 document.body.appendChild(popup)
 
-function showPopup(){
+setInterval(()=>{
 
 let name=buyers[Math.floor(Math.random()*buyers.length)]
 
-popup.innerHTML="🟢 <strong>"+name+"</strong> comprou há "+(Math.floor(Math.random()*4)+1)+" minutos"
+popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o acesso."
 
 popup.style.display="block"
 
@@ -3005,12 +3001,7 @@ setTimeout(()=>{
 popup.style.display="none"
 },4000)
 
-}
-
-setTimeout(()=>{
-showPopup()
-setInterval(showPopup,8000)
-},3000)
+},15000)
 
 
 
@@ -3060,7 +3051,6 @@ replies:[]
 }
 
 ]
-
 
 
 /* GERAR MAIS COMENTÁRIOS */
@@ -3163,20 +3153,32 @@ ${repliesHTML}
 
 }
 
-
-
-const btn=document.getElementById("loadMoreBtn")
+const btn = document.getElementById("loadMoreBtn")
 
 if(btn){
 btn.onclick=function(){
+visibleComments += 5
+renderComments()
+}
+}
+
 visibleComments+=5
 renderComments()
-}
+</script>
+
+<script>
+
 }
 
 renderComments()
 
+<script>
+
 </script>
+
+</body>
+</html>
+
 
 
 
