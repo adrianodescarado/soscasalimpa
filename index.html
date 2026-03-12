@@ -1393,49 +1393,58 @@ el.innerText=num
 
 /* POPUP DE COMPRA */
 
-const buyers=[
+<div id="purchaseAlert" style="
+position:fixed;
+bottom:20px;
+left:20px;
+background:#fff;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+padding:12px 15px;
+font-size:14px;
+display:none;
+z-index:9999;
+"></div>
 
-"Mariana - SP",
-"Juliana - RJ",
-"Patrícia - MG",
-"Carla - PR",
-"Fernanda - SC",
-"Renata - BA",
-"Aline - GO",
-"Vanessa - RS",
-"Luciana - DF",
-"Roberta - PE"
+<script>
 
-]
+const buyers = [
+"Juliana - SP",
+"Fernanda - PR",
+"Ana - MG",
+"Patrícia - PE",
+"Camila - RJ",
+"Mariana - BA",
+"Carla - SC",
+"Roberta - PE",
+"Vanessa - RS"
+];
 
-const popup=document.createElement("div")
+function showPurchase(){
 
-popup.style.position="fixed"
-popup.style.bottom="20px"
-popup.style.left="20px"
-popup.style.background="white"
-popup.style.padding="12px 16px"
-popup.style.borderRadius="12px"
-popup.style.boxShadow="0 4px 12px rgba(0,0,0,0.2)"
-popup.style.fontSize="14px"
-popup.style.display="none"
-popup.style.zIndex="9999"
+let buyer = buyers[Math.floor(Math.random()*buyers.length)];
 
-document.body.appendChild(popup)
+let box = document.getElementById("purchaseAlert");
 
-setInterval(()=>{
+if(!box) return;
 
-let name=buyers[Math.floor(Math.random()*buyers.length)]
+let minutes = Math.floor(Math.random()*5)+1;
 
-popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o acesso."
+box.innerHTML = "🟢 "+buyer+" comprou há "+minutes+" minutos";
 
-popup.style.display="block"
+box.style.display="block";
 
 setTimeout(()=>{
-popup.style.display="none"
-},4000)
+box.style.display="none";
+},5000);
 
-},15000)
+}
+
+showPurchase();
+
+setInterval(showPurchase,7000);
+
+</script>
 
 
 
@@ -2932,11 +2941,15 @@ el.innerText=num
 
 
 
+<script>
+
 /* CONTADOR DE VAGAS */
 
 setInterval(()=>{
 
 let el=document.getElementById("spots")
+
+if(!el) return
 
 let num=parseInt(el.innerText)
 
@@ -2953,7 +2966,6 @@ el.innerText=num
 /* POPUP DE COMPRA */
 
 const buyers=[
-
 "Mariana - SP",
 "Juliana - RJ",
 "Patrícia - MG",
@@ -2964,7 +2976,6 @@ const buyers=[
 "Vanessa - RS",
 "Luciana - DF",
 "Roberta - PE"
-
 ]
 
 const popup=document.createElement("div")
@@ -2982,11 +2993,11 @@ popup.style.zIndex="9999"
 
 document.body.appendChild(popup)
 
-setInterval(()=>{
+function showPopup(){
 
 let name=buyers[Math.floor(Math.random()*buyers.length)]
 
-popup.innerHTML="✅ <strong>"+name+"</strong> acabou de adquirir o acesso."
+popup.innerHTML="🟢 <strong>"+name+"</strong> comprou há "+(Math.floor(Math.random()*4)+1)+" minutos"
 
 popup.style.display="block"
 
@@ -2994,7 +3005,12 @@ setTimeout(()=>{
 popup.style.display="none"
 },4000)
 
-},15000)
+}
+
+setTimeout(()=>{
+showPopup()
+setInterval(showPopup,8000)
+},3000)
 
 
 
@@ -3044,6 +3060,7 @@ replies:[]
 }
 
 ]
+
 
 
 /* GERAR MAIS COMENTÁRIOS */
@@ -3146,32 +3163,20 @@ ${repliesHTML}
 
 }
 
-const btn = document.getElementById("loadMoreBtn")
+
+
+const btn=document.getElementById("loadMoreBtn")
 
 if(btn){
 btn.onclick=function(){
-visibleComments += 5
-renderComments()
-}
-}
-
 visibleComments+=5
 renderComments()
-</script>
-
-<script>
-
+}
 }
 
 renderComments()
 
-<script>
-
 </script>
-
-</body>
-</html>
-
 
 
 
