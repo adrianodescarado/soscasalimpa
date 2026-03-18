@@ -1453,160 +1453,166 @@ popup.style.display="none"
 const commentsData=[
 
 {
-name:"Mariana Souza",
-avatar:"https://randomuser.me/api/portraits/women/55.jpg",
-text:"Eu estava lendo tudo antes de comprar. Tenho dois netos pequenos e isso do colchão molhado acontece direto aqui em casa.",
-time:"12 min",
-likes:18,
+name:"Camila Rodrigues",
+avatar:"https://randomuser.me/api/portraits/women/12.jpg",
+text:"Eu paguei quase R$300 em um curso de limpeza e não chegou nem perto disso aqui… sério mesmo. Aqui é direto ao ponto.",
+time:"5 min",
+likes:42,
 replies:[
 {
 name:"S.O.S Casa Oficial",
 avatar:"https://randomuser.me/api/portraits/women/90.jpg",
-text:"Sim 😊 Temos uma solução específica para esse problema no aplicativo.",
+text:"Fico muito feliz com seu feedback Camila 🙏 Nossa ideia é justamente ser simples e direto.",
+time:"2 min"
+}
+]
+},
+
+{
+name:"Patrícia Gomes",
+avatar:"https://randomuser.me/api/portraits/women/22.jpg",
+text:"Comprei achando que seria mais do mesmo… mas por R$37 vale MUITO mais. Já usei 3 soluções aqui.",
+time:"8 min",
+likes:36,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Que bom que gostou Patrícia 😍 E ainda tem muitas outras soluções pra você usar!",
+time:"6 min"
+}
+]
+},
+
+{
+name:"Juliana Alves",
+avatar:"https://randomuser.me/api/portraits/women/33.jpg",
+text:"Gente eu já tinha comprado outro por R$297 e me arrependi demais… esse aqui é muito mais fácil.",
+time:"12 min",
+likes:51,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Isso acontece bastante 😅 por isso focamos em algo simples e prático.",
 time:"10 min"
 }
 ]
 },
 
 {
-name:"Roberta Lima",
-avatar:"https://randomuser.me/api/portraits/women/31.jpg",
-text:"Alguém já conseguiu tirar cheiro de mofo do guarda roupa com isso?",
-time:"25 min",
-likes:34,
+name:"Renata Souza",
+avatar:"https://randomuser.me/api/portraits/women/45.jpg",
+text:"Eu resolvi comprar porque estava barato (R$37), mas entregou muito mais do que imaginei.",
+time:"15 min",
+likes:28,
 replies:[
 {
-name:"Patricia Costa",
-avatar:"https://randomuser.me/api/portraits/women/42.jpg",
-text:"Eu consegui sim. Usei a dica que tem no aplicativo e resolveu em dois dias.",
-time:"20 min"
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Que bom que superou sua expectativa Renata 🙌",
+time:"13 min"
 }
 ]
 },
 
 {
-name:"Juliana Costa",
-avatar:"https://randomuser.me/api/portraits/women/48.jpg",
-text:"Eu sempre pesquiso bastante antes de comprar algo online. Parece bem interessante.",
-time:"27 min",
-likes:22,
-replies:[]
+name:"Fernanda Lima",
+avatar:"https://randomuser.me/api/portraits/women/54.jpg",
+text:"Só a dica do colchão já valeu o preço inteiro, sério… paguei 37 reais e resolvi um problema de meses.",
+time:"18 min",
+likes:47,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Essa é uma das mais usadas mesmo 😄 obrigado por compartilhar!",
+time:"15 min"
 }
-
 ]
+},
 
-
-/* GERAR MAIS COMENTÁRIOS */
-
-const names=[
-"Aline","Fernanda","Luciana","Tatiane","Paula","Gabriela","Renata","Bianca","Flavia","Claudia","Vanessa","Patricia"
+{
+name:"Vanessa Costa",
+avatar:"https://randomuser.me/api/portraits/women/60.jpg",
+text:"Eu achei que era golpe porque estava barato, mas resolvi arriscar… e me surpreendi.",
+time:"21 min",
+likes:39,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Entendemos sua preocupação 🙏 por isso temos garantia também.",
+time:"19 min"
+}
 ]
+},
 
-const texts=[
-
-"Estou lendo os comentários antes de decidir.",
-"Parece muito prático para quem trabalha fora.",
-"Alguém testou para manchas de sofá?",
-"Minha casa vive com cheiro de mofo no inverno.",
-"Se resolver o problema da gordura na cozinha já ajuda muito.",
-"Vi no Instagram e vim pesquisar melhor.",
-"Minha rotina é corrida então preciso de coisas rápidas.",
-"Gostei da proposta de usar coisas que já temos em casa."
-
+{
+name:"Bianca Martins",
+avatar:"https://randomuser.me/api/portraits/women/25.jpg",
+text:"Já comprei coisa de 200 e pouco na internet que não ajudou em nada… esse aqui por 37 resolveu rápido.",
+time:"25 min",
+likes:31,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Nosso foco é justamente resolver rápido sem complicação 😊",
+time:"22 min"
+}
 ]
+},
 
-for(let i=0;i<80;i++){
+{
+name:"Claudia Pereira",
+avatar:"https://randomuser.me/api/portraits/women/70.jpg",
+text:"Muito simples de usar… abre, vê o problema e resolve. Nada de ficar estudando igual outros que comprei caro.",
+time:"28 min",
+likes:26,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Exatamente Claudia 👏 é abrir e aplicar!",
+time:"26 min"
+}
+]
+},
 
-commentsData.push({
+{
+name:"Aline Batista",
+avatar:"https://randomuser.me/api/portraits/women/37.jpg",
+text:"Se eu soubesse disso antes não tinha gastado quase 300 reais em outro… aqui é muito mais direto.",
+time:"32 min",
+likes:44,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Agora você tem tudo na mão Aline 😄",
+time:"30 min"
+}
+]
+},
 
-name:names[Math.floor(Math.random()*names.length)]+" "+["Silva","Souza","Costa","Oliveira"][Math.floor(Math.random()*4)],
-
-avatar:"https://randomuser.me/api/portraits/women/"+Math.floor(Math.random()*90)+".jpg",
-
-text:texts[Math.floor(Math.random()*texts.length)],
-
-time:Math.floor(Math.random()*59)+" min",
-
-likes:Math.floor(Math.random()*40),
-
-replies:[]
-
-})
-
+{
+name:"Tatiane Oliveira",
+avatar:"https://randomuser.me/api/portraits/women/41.jpg",
+text:"Melhor custo benefício que já vi… sério mesmo.",
+time:"35 min",
+likes:21,
+replies:[
+{
+name:"S.O.S Casa Oficial",
+avatar:"https://randomuser.me/api/portraits/women/90.jpg",
+text:"Obrigado Tatiane 🙏 ficamos felizes demais!",
+time:"33 min"
+}
+]
 }
 
-
-
-let visibleComments=5
-
-function renderComments(){
-
-const container=document.getElementById("comments-container")
-
-if(!container) return
-
-container.innerHTML=""
-
-commentsData.slice(0,visibleComments).forEach(c=>{
-
-let repliesHTML=""
-
-c.replies.forEach(r=>{
-
-repliesHTML+=`
-
-<div style="margin-left:50px;margin-top:8px;">
-<img src="${r.avatar}" width="30" style="border-radius:50%;vertical-align:top">
-
-<div style="display:inline-block;background:#f0f2f5;padding:8px 12px;border-radius:18px;max-width:80%;">
-<strong>${r.name}</strong>
-<div>${r.text}</div>
-</div>
-</div>
-
-`
-
-})
-
-container.innerHTML+=`
-
-<div style="margin-bottom:15px;">
-
-<img src="${c.avatar}" width="35" style="border-radius:50%;vertical-align:top">
-
-<div style="display:inline-block;background:#f0f2f5;padding:10px 14px;border-radius:18px;max-width:80%;">
-
-<strong>${c.name}</strong>
-
-<div>${c.text}</div>
-
-</div>
-
-<div style="font-size:12px;color:#65676b;margin-left:45px;">
-Curtir · Responder · ${c.time} · ❤️ ${c.likes}
-</div>
-
-${repliesHTML}
-
-</div>
-
-`
-
-})
-
-}
-
-document.getElementById("loadMoreBtn").onclick=function(){
-
-visibleComments+=5
-renderComments()
-
-}
-
-renderComments()
-
-</script>
-
+];
 <div style="
 position:fixed;
 bottom:0;
