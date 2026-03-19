@@ -1137,38 +1137,29 @@ Você não precisa instalar nada complicado.
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
+const el = document.getElementById("videoDepoimento");
 
-<section class="py-16 px-6 bg-white text-center">
+if(el){
+el.addEventListener("click", function(){
 
-<h2 class="text-3xl font-bold mb-6">
-Veja o depoimento real de quem usou
-</h2>
+this.innerHTML = `
+<iframe 
+src="https://www.youtube.com/embed/vVkUQyyDhdg?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0"
+frameborder="0"
+allow="autoplay; encrypted-media"
+allowfullscreen
+style="width:100%;height:500px;border-radius:12px;">
+</iframe>
+`;
 
-<div id="videoDepoimento" class="cursor-pointer relative max-w-xl mx-auto">
+});
+}
 
-<img src="images/thumb-depoimento.jpg" 
-class="w-full rounded-xl shadow-xl"
-loading="lazy">
-
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="bg-white/90 p-4 rounded-full shadow-lg text-2xl">
-▶
-</div>
-</div>
-
-</div>
-
-<p class="mt-4 text-sm text-gray-500">
-Clique para assistir o depoimento 👆
-</p>
-
-</section>
-
-
-
-
-
+});
+</script>
 
 
 <!-- OFERTA -->
@@ -1801,19 +1792,6 @@ margin-top:5px;
 CLIQUE AQUI PARA USAR O CUPOM
 
 </a>
-
-<script>
-document.getElementById("videoDepoimento").addEventListener("click", function(){
-
-this.innerHTML = `
-<video controls autoplay playsinline style="width:100%;border-radius:12px;">
-<source src="videos/depoimento.mp4" type="video/mp4">
-Seu navegador não suporta vídeo.
-</video>
-`;
-
-});
-</script>
 
 </div>
 </body>
